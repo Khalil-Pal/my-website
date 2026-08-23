@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, Send, X } from 'lucide-react';
 import { translations } from './translations.js';
 import profileImage from '@assets/my_picture_1787425333891.png';
-import sandyLogo from "@assets/sandy's_logo_1787424723628.jpg";
-import nidaaLogo from '@assets/Nidaa_main_logo_1787424754396.jpg';
-import emilieLogo from '@assets/Emillie_logo_1787424843559.png';
+import sandyLogo from '@assets/sandy-new.png';
+import nidaaLogo from '@assets/nidaa-new.jpg';
+import emilieLogo from '@assets/emilie-new.jpg';
 
 type Language = 'en' | 'ar' | 'ru';
 
