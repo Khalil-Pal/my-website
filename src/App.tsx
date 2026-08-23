@@ -3,8 +3,8 @@ import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, La
 import { translations } from './translations.js';
 import profileImage from '@assets/my_picture_1787425333891.png';
 import sandyLogo from '@assets/sandy-new.png';
-import nidaaLogo from '@assets/nidaa-new.jpg';
-import emilieLogo from '@assets/emilie-new.jpg';
+import nidaaLogo from '@assets/nidaa-new.png';
+import emilieLogo from '@assets/emilie-new.png';
 
 type Language = 'en' | 'ar' | 'ru';
 
