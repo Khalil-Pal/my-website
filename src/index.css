@@ -416,10 +416,10 @@ section { position: relative; }
 .project-art.bot { background: #2b2a60; }
 .project-art.bot::before { width: 280px; height: 280px; top: 15%; left: 15%; background: var(--mint); }
 .project-art.bot::after { width: 160px; height: 160px; right: -8%; bottom: -6%; background: var(--coral); }
-.project-art.nidaa { background: #b7e4c9; }
+.project-art.nidaa { background: #fff; }
 .project-art.nidaa::before { width: 290px; height: 290px; right: 0; bottom: -12%; background: var(--coral); }
 .project-art.nidaa::after { width: 150px; height: 150px; top: 7%; left: 5%; background: var(--gold); }
-.project-art.emilie { background: #eeeae2; }
+.project-art.emilie { background: #fff; }
 .project-art.emilie::before, .project-art.emilie::after,
 .project-art.nidaa::before, .project-art.nidaa::after,
 .project-art.bot::before, .project-art.bot::after { display: none; }
@@ -433,10 +433,6 @@ section { position: relative; }
   transition: transform .5s cubic-bezier(.2,.8,.2,1), filter .5s ease;
 }
 .project:hover .project-art img { transform: scale(1.05); filter: saturate(1.12); }
-.project-art.nidaa img,
-.project-art.emilie img { object-fit: contain; object-position: center; padding: 1.5rem; }
-.project:hover .project-art.nidaa img,
-.project:hover .project-art.emilie img { transform: none; }
 .project-art .art-label { display: none; }
 .art-label {
   position: absolute;
@@ -503,7 +499,6 @@ section { position: relative; }
 .timeline-copy p { max-width: 36rem; margin: 0; color: #676473; font-size: .8rem; line-height: 1.7; }
 .contact { overflow: hidden; background: var(--coral); color: var(--ink); }
 .contact .section-inner { position: relative; }
-.contact::before { content: 'LET’S'; position: absolute; top: -7rem; right: -3rem; color: rgba(243,239,229,.16); font: 800 23rem/.8 var(--app-font-display); letter-spacing: -.14em; }
 .contact h2 { position: relative; max-width: 900px; margin: 0; font: 800 clamp(3.8rem, 10vw, 10rem)/.82 var(--app-font-display); letter-spacing: -.12em; }
 .contact-sub { position: relative; max-width: 28rem; margin: 2rem 0 3.2rem; color: rgba(17,16,45,.7); font-size: 1rem; line-height: 1.6; }
 .contact-links { position: relative; display: flex; flex-wrap: wrap; gap: .75rem; }
