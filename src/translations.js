@@ -115,7 +115,7 @@ export const translations = {
     work: {
       kicker: '02 / أعمال مختارة', title: 'أشياء تنبض بالحياة.', intro: 'مشاريع علمتني شيئاً لا يمكن تعلمه من درس تعليمي.',
       projects: [
-        { id: 'sandy', index: 'A / 01', tag: 'أتمتة تيليغرام · 2024', title: 'Sandy Squirrel Bot', description: 'بوت تيليغرام يجعل التفاعلات اليومية سريعة وودودة ومتوقعة. أصبح المشروع مساحة لتطبيق أساسيات الخلفيات وشحن التحسينات الصغيرة.', artLabel: 'SANDY', stack: ['Python', 'Telegram API', 'SQLite'], linkLabel: 'افتح في تيليغرام', link: 'https://t.me/sandy_squirrel_bot' },
+        { id: 'sandy', index: 'A / 01', tag: 'أتمتة تيليغرام · 2024', title: 'Sandy Squirrel Bot', description: 'بوت تيليغرام يجعل التفاعلات اليومية سريعة وودودة ومتوقعة. أصبح المشروع مساحة لتطبيق أساسيات الخلفيات وشحن التحسينات الصغيرة.', artLabel: 'SANDY', stack: ['Python', 'Telegram API', 'SQLite'], linkLabel: 'افتح في تيليغرام', link: 'https://t.me/Sandy67_Bot' },
         { id: 'nidaa', index: 'B / 02', tag: 'منصة ويب · قيد التطوير', title: 'Nidaa', description: 'منصة مبنية باستخدام تقنيات الويب الحديثة ومعمارية خلفية، ومصممة حول احتياجات المستخدمين الحقيقية.', artLabel: 'نداء', stack: ['Backend Architecture', 'Web Technologies', 'System Design'], linkLabel: 'رابط المشروع قريباً', link: null, replace: 'استبدال: أضف الجزء الأصعب + رابط المشروع' },
         { id: 'emilie', index: 'C / 03', tag: 'استوديو تصميم إبداعي', title: 'Émilie Atelier', description: 'دعوات · هوية بصرية · وسائل التواصل · تصميم UI/UX — مصمّم للحظات والعلامات التجارية المميزة.', artLabel: 'ÉMILIE', stack: ['Branding', 'Social Media', 'UI/UX Design'], linkLabel: 'شاهد على Instagram', link: 'https://www.instagram.com/emilie.art4?igsi=MTlvdXpmdnd1eHYwdQ%3D%3D' },
       ],
