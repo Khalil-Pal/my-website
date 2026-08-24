@@ -34,7 +34,7 @@ export const translations = {
       languagesTitle: 'Languages',
       languages: [
         { name: 'Arabic', level: 'Native', width: '100%' },
-        { name: 'English', level: 'b2', width: '75%' },
+        { name: 'English', level: 'b2', width: '70%' },
         { name: 'Russian', level: 'c1', width: '85%' },
       ],
     },
@@ -109,7 +109,7 @@ export const translations = {
       ],
       stats: [{ value: '2023', label: 'في سانت بطرسبرغ' }, { value: '3', label: 'لغات قيد التطور' }, { value: '∞', label: 'أسئلة مفتوحة' }],
       languagesTitle: 'اللغات',
-      languages: [{ name: 'العربية', level: 'لغة أم', width: '100%' }, { name: 'الإنجليزية', level: 'b2', width: '75%' }, { name: 'الروسية', level: 'c1', width: '85%' }],
+      languages: [{ name: 'العربية', level: 'لغة أم', width: '100%' }, { name: 'الإنجليزية', level: 'b2', width: '70%' }, { name: 'الروسية', level: 'c1', width: '85%' }],
     },
     work: {
       kicker: '02 / أعمال مختارة', title: 'أشياء تنبض بالحياة.', intro: 'مشاريع علمتني شيئاً لا يمكن تعلمه من درس تعليمي.',
@@ -146,7 +146,7 @@ export const translations = {
       small: 'Сейчас изучаю информационные системы и технологии в LETI. Когда я не в терминале, то разбираю процесс, учу новую русскую фразу или ищу более точный вопрос.',
       what: [{ number: '01', title: 'Надёжность', text: 'API и сервисы, которые остаются понятными с ростом проекта.' }, { number: '02', title: 'Форма идеи', text: 'Модели данных, архитектура и сценарии с запасом для роста.' }, { number: '03', title: 'Учиться дальше', text: 'Любопытство на практике: документировать, тестировать, выпускать.' }],
       stats: [{ value: '2023', label: 'в Санкт-Петербурге' }, { value: '3', label: 'языка в работе' }, { value: '∞', label: 'вопросов впереди' }],
-      languagesTitle: 'Языки', languages: [{ name: 'Арабский', level: 'Родной', width: '100%' }, { name: 'Английский', level: 'b2', width: '75%' }, { name: 'Русский', level: 'c1', width: '85%' }],
+      languagesTitle: 'Языки', languages: [{ name: 'Арабский', level: 'Родной', width: '100%' }, { name: 'Английский', level: 'b2', width: '70%' }, { name: 'Русский', level: 'c1', width: '85%' }],
     },
     work: {
       kicker: '02 / избранное', title: 'Проекты с характером.', intro: 'Три проекта, которые научили меня тому, чему не научит туториал.',
