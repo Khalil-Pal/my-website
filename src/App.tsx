@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, Send, X } from 'lucide-react';
+import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, MessageCircle, Send, X } from 'lucide-react';
 import { translations } from './translations.js';
 import profileImage from '@assets/my_picture_1787425333891.png';
 import sandyLogo from '@assets/sandy-new.png';
@@ -12,6 +12,7 @@ const socials = {
   github: 'https://github.com/Khalil-Pal',
   linkedin: 'https://www.linkedin.com/in/khalil-housheya/',
   telegram: 'https://t.me/khalil_ayed',
+  reddit: 'https://www.reddit.com/user/KhalilHousheya/',
 };
 const email = 'Khalilayed777@gmail.com';
 const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
@@ -127,6 +128,8 @@ function App() {
                 <a href={socials.github} target="_blank" rel="noreferrer" className="text-link" data-testid="link-github-hero"><Github size={15} />GitHub</a>
                 <a href={socials.linkedin} target="_blank" rel="noreferrer" className="text-link" data-testid="link-linkedin-hero"><Linkedin size={15} />LinkedIn</a>
                 <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="text-link" data-testid="link-email-hero"><Mail size={15} />Email</a>
+                <a href={socials.telegram} target="_blank" rel="noreferrer" className="text-link" data-testid="link-telegram-hero"><Send size={15} />Telegram</a>
+                <a href={socials.reddit} target="_blank" rel="noreferrer" className="text-link" data-testid="link-reddit-hero"><MessageCircle size={15} />Reddit</a>
               </div>
             </div>
             <div {...reveal('portrait', 170)} className={`${reveal('portrait').className} portrait-wrap`} style={reveal('portrait').style}>
@@ -253,6 +256,8 @@ function App() {
               <a href={socials.telegram} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-telegram"><Send size={16} />{copy.contact.telegram}</a>
               <a href={socials.github} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-github"><Github size={16} />{copy.contact.github}</a>
               <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-email"><Mail size={16} />{copy.contact.email}</a>
+              <a href={socials.linkedin} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-linkedin"><Linkedin size={16} />LinkedIn</a>
+              <a href={socials.reddit} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-reddit"><MessageCircle size={16} />Reddit</a>
             </div>
           </div>
         </section>
