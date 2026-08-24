@@ -27,15 +27,15 @@ export const translations = {
         { number: '03', title: 'Keep learning', text: 'Curious by practice — documenting, testing, shipping, repeating.' },
       ],
       stats: [
-        { value: '2024', label: 'in Saint Petersburg' },
+        { value: '2023', label: 'in Saint Petersburg' },
         { value: '3', label: 'languages in progress' },
         { value: '∞', label: 'questions still open' },
       ],
       languagesTitle: 'Languages',
       languages: [
         { name: 'Arabic', level: 'Native', width: '100%' },
-        { name: 'English', level: 'Professional', width: '78%' },
-        { name: 'Russian', level: 'Professional', width: '78%' },
+        { name: 'English', level: 'b2', width: '75%' },
+        { name: 'Russian', level: 'c1', width: '85%' },
       ],
     },
     work: {
@@ -61,14 +61,12 @@ export const translations = {
     },
     journey: {
       kicker: '04 / still becoming',
-      title: 'A timeline, not a résumé.',
+      title: 'Experience & Education',
       intro: 'A few coordinates from the road so far — with plenty of space left on the map.',
       items: [
         { date: 'Jun 29 – Jul 29, 2026', title: 'IT Assistant Internship · Al-Quds Open University', text: 'Reviewed technical documentation, set up a computer lab for lectures, provided technical support, and edited a video for the graduation ceremony. Certificate available on request.' },
         { date: 'Mar 15 – Jun 1, 2026', title: 'Database & IT Assistant Internship · Ward Company Trading Vehicle', text: 'Managed databases, provided IT assistance, and supported vehicle importing procedures. Certificate available on request.' },
         { date: 'Sept 2023 – Aug 2027', title: 'LETI · Information Systems & Technologies', text: 'Bachelor’s degree in Information Systems and Technologies at Saint Petersburg State Electrotechnical University “LETI”. Expected August 2027.' },
-        { date: 'May 15 – Jun 16, 2026', title: 'Sandy Squirrel Bot built', text: 'Designed and shipped a Telegram bot for media downloads and file conversion with subscriptions, async processing, and automated testing.' },
-        { date: 'Started April 2026, still in progress.', title: 'Nidaa', text: 'A Spring Boot and PostgreSQL platform connecting people in need with volunteers, organizations, and psychologists, with automated priority scoring, geolocation-based matching, and crisis detection for psychological support requests.' },
       ],
     },
     contact: {
@@ -111,7 +109,7 @@ export const translations = {
       ],
       stats: [{ value: '2023', label: 'في سانت بطرسبرغ' }, { value: '3', label: 'لغات قيد التطور' }, { value: '∞', label: 'أسئلة مفتوحة' }],
       languagesTitle: 'اللغات',
-      languages: [{ name: 'العربية', level: 'لغة أم', width: '100%' }, { name: 'الإنجليزية', level: 'احترافية', width: '78%' }, { name: 'الروسية', level: 'احترافية', width: '78%' }],
+      languages: [{ name: 'العربية', level: 'لغة أم', width: '100%' }, { name: 'الإنجليزية', level: 'b2', width: '75%' }, { name: 'الروسية', level: 'c1', width: '85%' }],
     },
     work: {
       kicker: '02 / أعمال مختارة', title: 'أشياء تنبض بالحياة.', intro: 'مشاريع علمتني شيئاً لا يمكن تعلمه من درس تعليمي.',
@@ -122,12 +120,12 @@ export const translations = {
       ],
     },
     skills: {
-      kicker: '03 / صندوق الأدوات', title: 'عدة العمل.', intro: 'الأدوات مهمة فقط عندما تساعد الفكرة على أن تصبح أدق.',
+      kicker: '03 / صندوق الأدوات', title: 'أدوات العمل.', intro: 'الأدوات مهمة فقط عندما تساعد الفكرة على أن تصبح أدق.',
       groups: [{ title: 'اللغات', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'الخلفيات', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'نمذجة البيانات', 'المصادقة'] }, { title: 'الأدوات والطريقة', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'التصميم', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
     },
     journey: {
-      kicker: '04 / ما زلت أتطور', title: 'خط زمني، لا سيرة ذاتية.', intro: 'بعض الإحداثيات من الطريق حتى الآن — وما زالت الخريطة تتسع.',
-      items: [{ date: '29 يونيو – 29 يوليو 2026', title: 'تدريب مساعد تكنولوجيا المعلومات · جامعة القدس المفتوحة', text: 'راجعت التوثيق التقني، وجهزت مختبر حاسوب للمحاضرات، وقدمت الدعم التقني، وحررت فيديو لحفل التخرج. الشهادة متاحة عند الطلب.' }, { date: '15 مارس – 1 يونيو 2026', title: 'تدريب مساعد قواعد البيانات وتقنية المعلومات · Ward Company Trading Vehicle', text: 'إدارة قواعد البيانات، وتقديم المساعدة في تقنية المعلومات، ودعم إجراءات استيراد المركبات. الشهادة متاحة عند الطلب.' }, { date: '2023 — الآن', title: 'LETI · نظم وتقنيات المعلومات', text: 'أبني الأساسيات: التفكير بالنظم والبرمجة والبيانات وانضباط السؤال عن السبب.' }, { date: '2024', title: 'Sandy Squirrel Bot', text: 'صممت وشحنت بوت تيليغرام كتطبيق عملي على الواجهات والبيانات والتكرار.' }, { date: 'بدأ في أبريل 2026، وما زال قيد التطوير.', title: 'Nidaa', text: 'منصة باستخدام Spring Boot وPostgreSQL تربط المحتاجين بالمتطوعين والمنظمات والأخصائيين النفسيين، مع حساب آلي للأولوية، ومطابقة جغرافية، واكتشاف الأزمات في طلبات الدعم النفسي.' }],
+      kicker: '04 / ما زلت أتطور', title: 'الخبرة والتعليم', intro: 'بعض الإحداثيات من الطريق حتى الآن — وما زالت الخريطة تتسع.',
+      items: [{ date: '29 يونيو – 29 يوليو 2026', title: 'تدريب مساعد تكنولوجيا المعلومات · جامعة القدس المفتوحة', text: 'راجعت التوثيق التقني، وجهزت مختبر حاسوب للمحاضرات، وقدمت الدعم التقني، وحررت فيديو لحفل التخرج. الشهادة متاحة عند الطلب.' }, { date: '15 مارس – 1 يونيو 2026', title: 'تدريب مساعد قواعد البيانات وتقنية المعلومات · Ward Company Trading Vehicle', text: 'إدارة قواعد البيانات، وتقديم المساعدة في تقنية المعلومات، ودعم إجراءات استيراد المركبات. الشهادة متاحة عند الطلب.' }, { date: '2023 — الآن', title: 'LETI · نظم وتقنيات المعلومات', text: 'أبني الأساسيات: التفكير بالنظم والبرمجة والبيانات وانضباط السؤال عن السبب.' }],
     },
     contact: { kicker: '05 / دورك الآن', title: 'لديك مشكلة جيدة؟', text: 'منفتح على تعاونات مدروسة وتدريبات ومحادثات حول بناء أشياء تعمل.', telegram: 'قل مرحباً على تيليغرام', github: 'شاهد الكود على GitHub', email: 'البريد الإلكتروني', emailMarker: 'استبدال: عنوان بريدك الإلكتروني' },
     footer: { made: 'صُنع من سانت بطرسبرغ بفضول.', top: 'العودة للأعلى', note: '© 2026 خليل حوشية' },
@@ -148,7 +146,7 @@ export const translations = {
       small: 'Сейчас изучаю информационные системы и технологии в LETI. Когда я не в терминале, то разбираю процесс, учу новую русскую фразу или ищу более точный вопрос.',
       what: [{ number: '01', title: 'Надёжность', text: 'API и сервисы, которые остаются понятными с ростом проекта.' }, { number: '02', title: 'Форма идеи', text: 'Модели данных, архитектура и сценарии с запасом для роста.' }, { number: '03', title: 'Учиться дальше', text: 'Любопытство на практике: документировать, тестировать, выпускать.' }],
       stats: [{ value: '2023', label: 'в Санкт-Петербурге' }, { value: '3', label: 'языка в работе' }, { value: '∞', label: 'вопросов впереди' }],
-      languagesTitle: 'Языки', languages: [{ name: 'Арабский', level: 'Родной', width: '100%' }, { name: 'Английский', level: 'Рабочий', width: '78%' }, { name: 'Русский', level: 'Профессиональный', width: '78%' }],
+      languagesTitle: 'Языки', languages: [{ name: 'Арабский', level: 'Родной', width: '100%' }, { name: 'Английский', level: 'b2', width: '75%' }, { name: 'Русский', level: 'c1', width: '85%' }],
     },
     work: {
       kicker: '02 / избранное', title: 'Проекты с характером.', intro: 'Три проекта, которые научили меня тому, чему не научит туториал.',
@@ -159,8 +157,8 @@ export const translations = {
       groups: [{ title: 'Языки', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST API', 'Telegram-боты', 'Модели данных', 'Аутентификация'] }, { title: 'Инструменты', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'Дизайн', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
     },
     journey: {
-      kicker: '04 / всё ещё расту', title: 'Путь, а не резюме.', intro: 'Несколько координат с дороги — и много места на карте впереди.',
-      items: [{ date: '29 июня – 29 июля 2026', title: 'Стажировка IT-ассистента · Открытый университет Аль-Кудс', text: 'Работал с технической документацией, подготовил компьютерный класс для лекций, оказывал техническую поддержку и монтировал видео для выпускной церемонии. Сертификат предоставляется по запросу.' }, { date: '15 марта – 1 июня 2026', title: 'Стажировка ассистента по базам данных и IT · Ward Company Trading Vehicle', text: 'Управление базами данных, IT-поддержка и сопровождение процедур импорта автомобилей. Сертификат предоставляется по запросу.' }, { date: '2023 — сейчас', title: 'LETI · Информационные системы и технологии', text: 'Собираю основу: системное мышление, программирование, данные и привычку спрашивать «почему».' }, { date: '2024', title: 'Sandy Squirrel Bot', text: 'Спроектировал и выпустил Telegram-бота как практику API, хранения данных и итераций.' }, { date: 'Начат в апреле 2026 года, всё ещё в работе.', title: 'Nidaa', text: 'Платформа на Spring Boot и PostgreSQL, соединяющая нуждающихся с волонтёрами, организациями и психологами, с автоматическим расчётом приоритета, геолокационным подбором и обнаружением кризисных ситуаций в запросах на психологическую помощь.' }],
+      kicker: '04 / всё ещё расту', title: 'Опыт и образование', intro: 'Несколько координат с дороги — и много места на карте впереди.',
+      items: [{ date: '29 июня – 29 июля 2026', title: 'Стажировка IT-ассистента · Открытый университет Аль-Кудс', text: 'Работал с технической документацией, подготовил компьютерный класс для лекций, оказывал техническую поддержку и монтировал видео для выпускной церемонии. Сертификат предоставляется по запросу.' }, { date: '15 марта – 1 июня 2026', title: 'Стажировка ассистента по базам данных и IT · Ward Company Trading Vehicle', text: 'Управление базами данных, IT-поддержка и сопровождение процедур импорта автомобилей. Сертификат предоставляется по запросу.' }, { date: '2023 — сейчас', title: 'LETI · Информационные системы и технологии', text: 'Собираю основу: системное мышление, программирование, данные и привычку спрашивать «почему».' }],
     },
     contact: { kicker: '05 / теперь ваша очередь', title: 'Есть хорошая задача?', text: 'Открыт к вдумчивым коллаборациям, стажировкам и разговорам о работающих вещах.', telegram: 'Написать в Telegram', github: 'Посмотреть код на GitHub', email: 'Почта', emailMarker: 'ЗАМЕНИТЬ: ваш email' },
     footer: { made: 'Сделано в Санкт-Петербурге с любопытством.', top: 'Наверх', note: '© 2026 Халиль Хушея' },
