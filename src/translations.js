@@ -54,8 +54,9 @@ export const translations = {
       intro: 'Tools are only useful when they help an idea become more precise.',
       groups: [
         { title: 'Languages', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] },
-        { title: 'Backend', skills: ['REST APIs', 'Telegram Bots', 'Data modeling', 'Authentication'] },
+        { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'Data modeling', 'Authentication'] },
         { title: 'Tools & ways', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] },
+        { title: 'Design', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] },
       ],
     },
     journey: {
@@ -122,7 +123,7 @@ export const translations = {
     },
     skills: {
       kicker: '03 / صندوق الأدوات', title: 'عدة العمل.', intro: 'الأدوات مهمة فقط عندما تساعد الفكرة على أن تصبح أدق.',
-      groups: [{ title: 'اللغات', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'الخلفيات', skills: ['REST APIs', 'Telegram Bots', 'نمذجة البيانات', 'المصادقة'] }, { title: 'الأدوات والطريقة', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }],
+      groups: [{ title: 'اللغات', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'الخلفيات', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'نمذجة البيانات', 'المصادقة'] }, { title: 'الأدوات والطريقة', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'التصميم', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
     },
     journey: {
       kicker: '04 / ما زلت أتطور', title: 'خط زمني، لا سيرة ذاتية.', intro: 'بعض الإحداثيات من الطريق حتى الآن — وما زالت الخريطة تتسع.',
@@ -155,7 +156,7 @@ export const translations = {
     },
     skills: {
       kicker: '03 / инструменты', title: 'Рабочий набор.', intro: 'Инструменты полезны, когда помогают идее стать точнее.',
-      groups: [{ title: 'Языки', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'Backend', skills: ['REST API', 'Telegram-боты', 'Модели данных', 'Аутентификация'] }, { title: 'Инструменты', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }],
+      groups: [{ title: 'Языки', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST API', 'Telegram-боты', 'Модели данных', 'Аутентификация'] }, { title: 'Инструменты', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'Дизайн', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
     },
     journey: {
       kicker: '04 / всё ещё расту', title: 'Путь, а не резюме.', intro: 'Несколько координат с дороги — и много места на карте впереди.',
