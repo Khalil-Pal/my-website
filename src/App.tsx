@@ -138,7 +138,6 @@ function App() {
                 <div className="portrait-content">
                 </div>
               </div>
-              <div className="portrait-stamp">{copy.hero.stamp}</div>
             </div>
           </div>
           <div className="scroll-cue"><span />{copy.hero.scroll}</div>
