@@ -18,8 +18,8 @@ export const translations = {
       kicker: '01 / a little context',
       title: 'More than a backend.',
       intro: 'I care about the surface too: the names, flows and tiny decisions that make a system feel obvious.',
-      paragraph: 'I’m Khalil — a developer who likes useful complexity. My work sits between product thinking and engineering: understanding what people need, then making the dependable layer underneath it feel simple.',
-      small: 'Currently studying Information Systems & Technologies at LETI. When I am not in a terminal, I am usually mapping a process, learning a new Russian phrase, or looking for a better question.',
+      paragraph: "I'm Khalil — a developer who likes useful complexity. My work sits between product thinking and engineering: understanding what people need, then making the dependable layer underneath it feel simple.",
+      small: "Currently studying Information Systems & Technologies at LETI. When I step away from the terminal, I'm mapping out a process, working on my Russian, or hunting for the next better question.",
       what: [
         { number: '01', title: 'Make it reliable', text: 'APIs and services that stay understandable when the project gets real.' },
         { number: '02', title: 'Find the shape', text: 'Data models, architecture and flows that give a product room to grow.' },
