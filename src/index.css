@@ -387,9 +387,9 @@ section { position: relative; }
 .stat-label { display: block; margin-top: .35rem; color: #777482; font: 500 .63rem var(--app-font-mono); letter-spacing: .05em; text-transform: uppercase; }
 .languages { margin-top: 1.2rem; padding-top: 1.3rem; border-top: 1px solid #c6c2b8; }
 .languages h3 { margin: 0 0 1rem; font: 700 .72rem var(--app-font-mono); letter-spacing: .08em; text-transform: uppercase; }
-.language-line { display: grid; grid-template-columns: 4.4rem 1fr 5rem; gap: .8rem; align-items: center; margin: .65rem 0; color: #5f5c69; font: 500 .65rem var(--app-font-mono); }
-.language-bar { height: 5px; background: #d0ccc2; }
-.language-fill { display: block; height: 100%; background: var(--coral); }
+.language-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin: .65rem 0; }
+.language-name { color: var(--ink); font-size: .78rem; font-weight: 700; }
+.language-level { color: var(--coral-dark); font: 500 .64rem var(--app-font-mono); letter-spacing: .04em; text-transform: uppercase; }
 .work { background: var(--ink); }
 .work .section-heading { align-items: start; }
 .work .section-title { line-height: 1; }

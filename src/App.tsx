@@ -224,7 +224,7 @@ function App() {
                 </div>
                 <div className="languages">
                   <h3>{copy.about.languagesTitle}</h3>
-                  {copy.about.languages.map((item: any) => <div className="language-line" key={item.name}><span>{item.name}</span><span className="language-bar"><span className="language-fill" style={{ width: item.width }} /></span><span>{item.level}</span></div>)}
+                  {copy.about.languages.map((item: any) => <div className="language-line" key={item.name}><span className="language-name">{item.name}</span><span className="language-level">{item.level}</span></div>)}
                 </div>
               </div>
             </div>
