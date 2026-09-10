@@ -21,24 +21,57 @@ const projectImages = {
   nidaa: nidaaLogo,
   emilie: emilieLogo,
 };
+const techStack = ['Java', 'Python', 'JavaScript', 'HTML', 'CSS', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Git', 'GitHub', 'GitHub Actions', 'Postman'];
+const languageOptions: { code: Language; label: string }[] = [
+  { code: 'en', label: 'English' },
+  { code: 'ar', label: 'العربية' },
+  { code: 'ru', label: 'Русский' },
+];
+
+function getInitialLanguage(): Language {
+  if (typeof window === 'undefined') return 'en';
+  const saved = window.localStorage.getItem('khalil-language');
+  if (saved === 'ar' || saved === 'ru' || saved === 'en') return saved;
+
+  const browserLanguage = window.navigator.languages?.[0] ?? window.navigator.language ?? '';
+  if (browserLanguage.toLowerCase().startsWith('ar')) return 'ar';
+  if (browserLanguage.toLowerCase().startsWith('ru')) return 'ru';
+  return 'en';
+}
 
 function App() {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === 'undefined') return 'en';
-    const saved = window.localStorage.getItem('khalil-language');
-    return saved === 'ar' || saved === 'ru' || saved === 'en' ? saved : 'en';
-  });
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState<Record<string, boolean>>({});
   const copy = translations[language] as any;
   const revealRoot = useRef<HTMLDivElement>(null);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
     window.localStorage.setItem('khalil-language', language);
   }, [language]);
+
+  useEffect(() => {
+    const closeLanguageMenuOnOutsideClick = (event: MouseEvent) => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) setLanguageMenuOpen(false);
+    };
+    const closeOverlaysOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setLanguageMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', closeLanguageMenuOnOutsideClick);
+    document.addEventListener('keydown', closeOverlaysOnEscape);
+    return () => {
+      document.removeEventListener('mousedown', closeLanguageMenuOnOutsideClick);
+      document.removeEventListener('keydown', closeOverlaysOnEscape);
+    };
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -68,7 +101,7 @@ function App() {
 
   const switchLanguage = (next: Language) => {
     setLanguage(next);
-    setMenuOpen(false);
+    setLanguageMenuOpen(false);
   };
 
   return (
@@ -84,19 +117,27 @@ function App() {
           ))}
         </nav>
         <div className="header-actions">
-          <div className="lang-switcher" aria-label="Language switcher">
-            {(['en', 'ar', 'ru'] as Language[]).map((item) => (
+          <div className="language-menu" ref={languageMenuRef}>
+            <button type="button" className="language-trigger" onClick={() => setLanguageMenuOpen((isOpen) => !isOpen)} aria-expanded={languageMenuOpen} aria-haspopup="menu" data-testid="button-language-menu">
+              {copy.language.label}
+            </button>
+            {languageMenuOpen && (
+              <div className="language-popover" role="menu" aria-label={copy.language.label}>
+                {languageOptions.map((item) => (
               <button
-                key={item}
+                key={item.code}
                 type="button"
-                className={`lang-button ${language === item ? 'active' : ''}`}
-                onClick={() => switchLanguage(item)}
-                data-testid={`button-language-${item}`}
-                aria-label={`Switch to ${item}`}
+                className={`language-option ${language === item.code ? 'active' : ''}`}
+                onClick={() => switchLanguage(item.code)}
+                role="menuitemradio"
+                aria-checked={language === item.code}
+                data-testid={`button-language-${item.code}`}
               >
-                {item.toUpperCase()}
+                {item.label}
               </button>
-            ))}
+                ))}
+              </div>
+            )}
           </div>
           <button type="button" className="menu-button" onClick={() => setMenuOpen(!menuOpen)} data-testid="button-mobile-menu" aria-label="Toggle menu">
             {menuOpen ? <X size={21} /> : <Menu size={21} />}
@@ -224,11 +265,16 @@ function App() {
               <div {...reveal('skills-symbol')} style={reveal('skills-symbol').style} className="skills-symbol" aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
               <div className="skill-groups">
                 {copy.skills.groups.map((group: any, index: number) => <div {...reveal(`skill-group-${index}`, index * 80)} className="skill-group" style={reveal(`skill-group-${index}`).style} key={group.title}><h3>{group.title}</h3><div className="skill-chips">{group.skills.map((skill: string) => <span className="skill-chip" key={skill} data-testid={`skill-${skill.replaceAll(' ', '-').toLowerCase()}`}>{skill}</span>)}</div></div>)}
+                <p {...reveal('skills-credential', 180)} className="skill-credential" style={reveal('skills-credential').style}>{copy.skills.credential}</p>
               </div>
             </div>
             <div className="tech-marquee" aria-label="Technology stack">
               <div className="tech-marquee-track">
-                {['Java', 'Python', 'JavaScript', 'HTML', 'CSS', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Git', 'GitHub', 'GitHub Actions', 'Postman', 'Java', 'Python', 'JavaScript', 'HTML', 'CSS', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Git', 'GitHub', 'GitHub Actions', 'Postman'].map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+                {[0, 1, 2, 3].map((sequence) => (
+                  <div className="tech-marquee-sequence" aria-hidden={sequence !== 0} key={sequence}>
+                    {techStack.map((item) => <span key={item}>{item}</span>)}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -126,23 +126,41 @@ a { color: inherit; text-decoration: none; }
 .nav-link:hover { color: var(--paper); }
 .nav-link:hover::after { transform: scaleX(1); }
 .header-actions { display: flex; align-items: center; gap: .9rem; }
-.lang-switcher {
-  display: inline-flex;
-  padding: 3px;
+.language-menu { position: relative; }
+.language-trigger {
   border: 1px solid var(--line);
+  padding: .52rem .7rem;
+  color: var(--paper);
   background: rgba(255,255,255,.03);
-  border-radius: 999px;
-}
-.lang-button {
-  border: 0;
-  padding: .35rem .5rem;
-  color: rgba(243,239,229,.55);
-  background: transparent;
-  border-radius: 999px;
   font: 500 .62rem var(--app-font-mono);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.language-trigger:hover, .language-trigger[aria-expanded="true"] { border-color: var(--mint); color: var(--mint); }
+.language-popover {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + .65rem);
+  right: 0;
+  display: grid;
+  width: 9.5rem;
+  padding: .35rem;
+  border: 1px solid var(--line);
+  background: rgba(25,24,66,.98);
+  box-shadow: 0 16px 36px rgba(0,0,0,.3);
+}
+.language-option {
+  width: 100%;
+  border: 0;
+  padding: .65rem .7rem;
+  color: rgba(243,239,229,.68);
+  background: transparent;
+  font: 500 .68rem var(--app-font-mono);
+  text-align: left;
   transition: color .2s ease, background-color .2s ease;
 }
-.lang-button.active { color: var(--ink); background: var(--mint); }
+.language-option:hover, .language-option.active { color: var(--ink); background: var(--mint); }
 .menu-button { display: none; border: 0; color: var(--paper); background: transparent; }
 .mobile-menu {
   position: fixed;
@@ -446,6 +464,7 @@ section { position: relative; }
 .skill-chips { display: flex; flex-wrap: wrap; gap: .65rem; }
 .skill-chip { padding: .55rem .72rem; border: 1px solid rgba(243,239,229,.2); color: var(--paper); font-size: .78rem; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
 .skill-chip:hover { border-color: var(--mint); color: var(--ink); background: var(--mint); }
+.skill-credential { margin: .25rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--mint); font: 500 .68rem/1.6 var(--app-font-mono); }
 .tech-marquee {
   overflow: hidden;
   margin-top: 5rem;
@@ -455,10 +474,12 @@ section { position: relative; }
 .tech-marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: tech-marquee-scroll 36s linear infinite;
+  will-change: transform;
 }
 .tech-marquee:hover .tech-marquee-track { animation-play-state: paused; }
-.tech-marquee span {
+.tech-marquee-sequence { display: flex; flex: 0 0 auto; }
+.tech-marquee-sequence span {
   display: inline-flex;
   align-items: center;
   gap: 1.8rem;
@@ -468,7 +489,7 @@ section { position: relative; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.tech-marquee span::after { content: '✦'; color: var(--coral); margin-left: 1.8rem; }
+.tech-marquee-sequence span::after { content: '✦'; color: var(--coral); margin-left: 1.8rem; }
 .journey { background: var(--paper); color: var(--ink); }
 .journey .section-title { color: var(--ink); }
 .journey .section-kicker { color: var(--coral-dark); }
@@ -494,9 +515,12 @@ section { position: relative; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes tech-marquee-scroll { to { transform: translateX(-25%); } }
 html[dir="rtl"] .hero::after { right: auto; left: clamp(1.25rem, 5vw, 5rem); }
 html[dir="rtl"] .portrait-stamp { right: auto; left: -1.7rem; }
 html[dir="rtl"] .scroll-cue { right: clamp(1.25rem, 8vw, 9rem); left: auto; }
+html[dir="rtl"] .language-popover { right: auto; left: 0; }
+html[dir="rtl"] .language-option { text-align: right; }
 html[dir="rtl"] .timeline::before { right: 30%; left: auto; }
 html[dir="rtl"] .timeline-copy { padding-right: 1rem; padding-left: 0; }
 html[dir="rtl"] .timeline-copy::before { right: -4.35rem; left: auto; }

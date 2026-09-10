@@ -1,6 +1,7 @@
 export const translations = {
   en: {
     languageName: 'English',
+    language: { label: 'Language' },
     nav: { about: 'About', work: 'Work', skills: 'Skills', journey: 'Journey', contact: 'Contact' },
     hero: {
       eyebrow: 'Information systems / backend developer',
@@ -57,6 +58,7 @@ export const translations = {
         { title: 'Tools & ways', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] },
         { title: 'Design', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] },
       ],
+      credential: 'Certified Front-End Developer — Yandex Education (2025–2026)',
     },
     journey: {
       kicker: '04 / still becoming',
@@ -81,6 +83,7 @@ export const translations = {
   },
   ar: {
     languageName: 'العربية',
+    language: { label: 'اللغة' },
     nav: { about: 'عنّي', work: 'أعمالي', skills: 'مهاراتي', journey: 'رحلتي', contact: 'تواصل' },
     hero: {
       eyebrow: 'نظم المعلومات / مطوّر خلفيات',
@@ -120,6 +123,7 @@ export const translations = {
     skills: {
       kicker: '03 / صندوق الأدوات', title: 'أدوات العمل.', intro: 'الأدوات مهمة فقط عندما تساعد الفكرة على أن تصبح أدق.',
       groups: [{ title: 'اللغات', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'الخلفيات', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'نمذجة البيانات', 'المصادقة'] }, { title: 'الأدوات والطريقة', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'التصميم', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
+      credential: 'مطوّر واجهات أمامية معتمد — ياندكس للتعليم (2025–2026)',
     },
     journey: {
       kicker: '04 / ما زلت أتطور', title: 'الخبرة والتعليم', intro: 'بعض الإحداثيات من الطريق حتى الآن — وما زالت الخريطة تتسع.',
@@ -130,6 +134,7 @@ export const translations = {
   },
   ru: {
     languageName: 'Русский',
+    language: { label: 'Язык' },
     nav: { about: 'Обо мне', work: 'Работы', skills: 'Навыки', journey: 'Путь', contact: 'Контакты' },
     hero: {
       eyebrow: 'Информационные системы / backend-разработчик', first: 'Халиль', second: 'Хошиех',
@@ -153,6 +158,7 @@ export const translations = {
     skills: {
       kicker: '03 / инструменты', title: 'Рабочий набор.', intro: 'Инструменты полезны, когда помогают идее стать точнее.',
       groups: [{ title: 'Языки', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST API', 'Telegram-боты', 'Модели данных', 'Аутентификация'] }, { title: 'Инструменты', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'Дизайн', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
+      credential: 'Сертифицированный Frontend-разработчик — Яндекс Образование (2025–2026)',
     },
     journey: {
       kicker: '04 / всё ещё расту', title: 'Опыт и образование', intro: 'Несколько координат с дороги — и много места на карте впереди.',
