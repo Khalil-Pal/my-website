@@ -5,7 +5,6 @@ function Footer({ copy }: { copy: Copy }) {
   return (
     <footer className="site-footer">
       <span>{copy.footer.note}</span>
-      <span className="footer-note">{copy.footer.made}</span>
       <a href="#top">{copy.footer.top} <ArrowUpRight size={13} /></a>
     </footer>
   );
