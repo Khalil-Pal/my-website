@@ -7,19 +7,19 @@ function About({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
         <div className="section-heading">
           <div className="section-kicker">{copy.about.kicker}</div>
           <div>
-            <h2 {...reveal('about-title')} className="section-title" style={reveal('about-title').style}>{copy.about.title}</h2>
-            <p {...reveal('about-intro', 80)} className="section-intro" style={reveal('about-intro').style}>{copy.about.intro}</p>
+            <h2 {...reveal('about-title', 0, 'section-title')}>{copy.about.title}</h2>
+            <p {...reveal('about-intro', 80, 'section-intro')}>{copy.about.intro}</p>
           </div>
         </div>
         <div className="about-grid">
           <div>
-            <div {...reveal('about-copy')} className="about-copy" style={reveal('about-copy').style}>{copy.about.paragraph}</div>
-            <p {...reveal('about-small', 80)} className="small-copy" style={reveal('about-small').style}>{copy.about.small}</p>
+            <div {...reveal('about-copy', 0, 'about-copy')}>{copy.about.paragraph}</div>
+            <p {...reveal('about-small', 80, 'small-copy')}>{copy.about.small}</p>
           </div>
           <div>
             <div className="what-grid">
               {copy.about.what.map((item: any, index: number) => (
-                <article {...reveal(`what-${index}`, index * 80)} className="what-card" style={reveal(`what-${index}`).style} key={item.number}>
+                <article {...reveal(`what-${index}`, index * 80, 'what-card')} key={item.number}>
                   <span className="what-number">{item.number}</span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>

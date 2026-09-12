@@ -9,13 +9,13 @@ function Skills({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
       <div className="section-inner">
         <div className="section-heading">
           <div className="section-kicker">{copy.skills.kicker}</div>
-          <div><h2 {...reveal('skills-title')} className="section-title" style={reveal('skills-title').style}>{copy.skills.title}</h2><p {...reveal('skills-intro', 80)} className="section-intro" style={reveal('skills-intro').style}>{copy.skills.intro}</p></div>
+          <div><h2 {...reveal('skills-title', 0, 'section-title')}>{copy.skills.title}</h2><p {...reveal('skills-intro', 80, 'section-intro')}>{copy.skills.intro}</p></div>
         </div>
         <div className="skills-layout">
-          <div {...reveal('skills-symbol')} style={reveal('skills-symbol').style} className="skills-symbol" aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
+          <div {...reveal('skills-symbol', 0, 'skills-symbol')} aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
           <div className="skill-groups">
-            {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80)} className={`skill-tier ${tier.id}`} style={reveal(`skill-tier-${tier.id}`).style} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill}>{skill}</span>)}</div></div>)}
-            <p {...reveal('skills-credential', 180)} className="skill-credential" style={reveal('skills-credential').style}>{copy.skills.credential}</p>
+            {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80, `skill-tier ${tier.id}`)} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill}>{skill}</span>)}</div></div>)}
+            <p {...reveal('skills-credential', 180, 'skill-credential')}>{copy.skills.credential}</p>
           </div>
         </div>
         <div className="tech-marquee" aria-label="Technology stack">

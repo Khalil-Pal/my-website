@@ -2,7 +2,7 @@ export type Language = 'en' | 'ar' | 'ru';
 
 /** Shape returned by App's reveal() helper, spread onto scroll-revealed elements. */
 export type RevealProps = { id: string; className: string; style: { transitionDelay: string } };
-export type Reveal = (id: string, delay?: number) => RevealProps;
+export type Reveal = (id: string, delay?: number, extraClass?: string) => RevealProps;
 
 /** Sections receive the active language's translation object. It is intentionally
  *  untyped: translations.js is plain JS and the shape varies per section. */

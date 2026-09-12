@@ -66,6 +66,10 @@ function App() {
   useEffect(() => {
     const nodes = revealRoot.current?.querySelectorAll('.reveal');
     if (!nodes) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setVisible(Object.fromEntries([...nodes].map((node) => [node.id, true])));
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
         if (entry.isIntersecting) setVisible((current) => ({ ...current, [entry.target.id]: true }));
@@ -76,9 +80,9 @@ function App() {
     return () => observer.disconnect();
   }, [language]);
 
-  const reveal = (id: string, delay = 0) => ({
+  const reveal = (id: string, delay = 0, extraClass = '') => ({
     id,
-    className: `reveal ${visible[id] ? 'is-visible' : ''}`,
+    className: `reveal${extraClass ? ` ${extraClass}` : ''}${visible[id] ? ' is-visible' : ''}`,
     style: { transitionDelay: `${delay}ms` },
   });
 

@@ -417,7 +417,7 @@ section { position: relative; }
   border: 1px solid var(--line);
   transition: border-color .3s ease, transform .3s ease;
 }
-.project:hover { border-color: rgba(243,239,229,.45); transform: translateY(-5px); }
+.project-list .project:hover { border-color: rgba(243,239,229,.45); transform: translateY(-5px); }
 .project-index { position: absolute; z-index: 2; top: 1rem; left: 1rem; padding: .45rem .55rem; color: var(--ink); background: var(--mint); font: 700 .65rem var(--app-font-mono); }
 .project-main { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: 1.5rem 1.35rem 1.35rem; }
 .project-tag { color: var(--gold); font: 500 .64rem var(--app-font-mono); letter-spacing: .08em; text-transform: uppercase; }
@@ -467,7 +467,7 @@ section { position: relative; }
 .project.nidaa .stack span { color: var(--mint); }
 .project-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--coral); font-size: .7rem; font-weight: 700; }
 .project-link:hover { color: var(--mint); }
-/* Emilie is design work, not engineering — gold index and muted meta set it apart
+/* Emilie is design work, not engineering вЂ” gold index and muted meta set it apart
    from the two backend cards it shares the grid with. */
 .project.emilie .project-index { background: var(--gold); }
 .project.emilie .project-tag { color: rgba(243,239,229,.52); }
@@ -483,11 +483,11 @@ section { position: relative; }
 .skill-chips { display: flex; flex-wrap: wrap; gap: .65rem; }
 .skill-chip { padding: .55rem .72rem; border: 1px solid rgba(243,239,229,.2); color: var(--paper); font-size: .78rem; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
 .skill-chip:hover { border-color: var(--mint); color: var(--ink); background: var(--mint); }
-/* Tier 1 — what I actually get hired for. Heaviest visual weight. */
+/* Tier 1 вЂ” what I actually get hired for. Heaviest visual weight. */
 .skill-tier.core { padding-top: 1.15rem; border-top-color: rgba(255,115,95,.55); }
 .skill-tier.core h3 { color: var(--coral); font-size: .76rem; }
 .skill-tier.core .skill-chip { padding: .72rem .95rem; border-color: rgba(243,239,229,.34); font-size: .95rem; font-weight: 600; }
-/* Tier 3 — real, but deliberately subordinate: smaller, muted, no title column. */
+/* Tier 3 вЂ” real, but deliberately subordinate: smaller, muted, no title column. */
 .skill-tier.also { grid-template-columns: 1fr; gap: .7rem; margin-top: -.9rem; padding-top: 1.1rem; border-top-color: rgba(243,239,229,.09); }
 .skill-tier.also h3 { color: rgba(243,239,229,.42); font-size: .6rem; letter-spacing: .1em; }
 .skill-tier.also .skill-chips { gap: .4rem; }
@@ -518,7 +518,7 @@ section { position: relative; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.tech-marquee-sequence span::after { content: '✦'; color: var(--coral); margin-left: 1.8rem; }
+.tech-marquee-sequence span::after { content: 'вњ¦'; color: var(--coral); margin-left: 1.8rem; }
 .journey { background: var(--paper); color: var(--ink); }
 .journey .section-title { color: var(--ink); }
 .journey .section-intro { color: #504e5f; }
@@ -619,7 +619,7 @@ html[dir="rtl"] .timeline-copy::before { right: -4.35rem; left: auto; }
   .portrait { transition: none; }
   .portrait-wrap:hover .portrait { transform: rotate(3deg); }
   .project { transition: border-color .3s ease; }
-  .project:hover { transform: none; }
+  .project-list .project:hover { transform: none; }
   .project-art img { transition: none; }
   .project:hover .project-art img { transform: none; filter: none; }
   .text-link:hover, .contact-button:hover { transform: none; }

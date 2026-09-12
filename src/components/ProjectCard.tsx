@@ -12,7 +12,7 @@ const projectImages = {
 
 function ProjectCard({ project, index, reveal }: { project: any; index: number; reveal: Reveal }) {
   return (
-    <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id}`} style={reveal(`project-${project.id}`).style}>
+    <article {...reveal(`project-${project.id}`, index * 100, `project ${project.id}`)}>
       <div className="project-index">{project.index}</div>
       <div className="project-main">
         <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>

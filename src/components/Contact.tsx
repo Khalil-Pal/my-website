@@ -7,8 +7,8 @@ function Contact({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
     <section className="section contact" id="contact">
       <div className="section-inner">
         <div className="section-kicker">{copy.contact.kicker}</div>
-        <h2 {...reveal('contact-title')} style={reveal('contact-title').style}>{copy.contact.title}</h2>
-        <p {...reveal('contact-copy', 80)} className="contact-sub" style={reveal('contact-copy').style}>{copy.contact.text}</p>
+        <h2 {...reveal('contact-title')}>{copy.contact.title}</h2>
+        <p {...reveal('contact-copy', 80, 'contact-sub')}>{copy.contact.text}</p>
         <div className="contact-links">
           <a href={resumeUrl} target="_blank" rel="noreferrer" className="contact-button"><FileText size={16} />{copy.contact.resume}</a>
           <a href={socials.telegram} target="_blank" rel="noreferrer" className="contact-button"><Send size={16} />{copy.contact.telegram}</a>
