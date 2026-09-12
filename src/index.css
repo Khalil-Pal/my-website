@@ -311,25 +311,7 @@ a { color: inherit; text-decoration: none; }
   object-position: center 24%;
   filter: saturate(.9);
 }
-.portrait::before, .portrait::after { display: none; }
-.portrait-content { z-index: 2; }
 .portrait-wrap:hover .portrait { transform: rotate(0deg); }
-.portrait-content { position: relative; z-index: 1; text-align: center; }
-.portrait-initials {
-  color: var(--paper);
-  font: 800 clamp(6rem, 15vw, 10rem)/.8 var(--app-font-display);
-  letter-spacing: -.13em;
-  text-indent: -.13em;
-}
-.portrait-label {
-  display: inline-block;
-  margin-top: 2.1rem;
-  padding: .6rem .8rem;
-  color: var(--ink);
-  background: var(--gold);
-  font: 500 .62rem var(--app-font-mono);
-  letter-spacing: .06em;
-}
 .scroll-cue {
   position: absolute;
   bottom: 2rem;
@@ -485,7 +467,6 @@ section { position: relative; }
 .project.nidaa .stack span { color: var(--mint); }
 .project-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--coral); font-size: .7rem; font-weight: 700; }
 .project-link:hover { color: var(--mint); }
-.replace-note { color: var(--gold); font: 500 .6rem var(--app-font-mono); line-height: 1.5; }
 /* Emilie is design work, not engineering — gold index and muted meta set it apart
    from the two backend cards it shares the grid with. */
 .project.emilie .project-index { background: var(--gold); }
@@ -557,16 +538,33 @@ section { position: relative; }
 .contact-links { position: relative; display: flex; flex-wrap: wrap; gap: .75rem; }
 .contact-button { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.1rem; border: 1px solid var(--ink); color: var(--paper); background: var(--ink); font-size: .75rem; font-weight: 700; transition: background-color .2s ease, color .2s ease, transform .2s ease; }
 .contact-button:hover { color: var(--ink); background: var(--mint); transform: translateY(-3px); }
-.contact-email { display: flex; align-items: center; gap: .4rem; position: relative; margin-top: 1rem; color: var(--ink); font: 500 .65rem var(--app-font-mono); }
-.replace-marker { color: #8d3d37; text-decoration: underline dashed; text-underline-offset: .22rem; }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem clamp(1.25rem, 8vw, 9rem); color: rgba(243,239,229,.55); border-top: 1px solid var(--line); font: 500 .62rem var(--app-font-mono); letter-spacing: .03em; }
-.footer-note { color: var(--mint); }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Keyboard focus. :where() keeps the base rule at zero specificity so the
+   per-section overrides below win without !important. */
+:where(a, button):focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+/* Mint is too pale against the paper sections. */
+.about :where(a, button):focus-visible,
+.journey :where(a, button):focus-visible {
+  outline-color: var(--coral-dark);
+}
+/* Both brand colours wash out on the coral contact panel. */
+.contact :where(a, button):focus-visible {
+  outline-color: var(--ink);
+  outline-offset: 4px;
+}
+/* Popover rows are flush to the panel edge, so tuck the ring inside. */
+.language-option:focus-visible { outline-offset: -2px; }
+/* The brand mark is a circle; match it. */
+.brand:focus-visible { outline-offset: 4px; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes tech-marquee-scroll { to { transform: translateX(-25%); } }
 html[dir="rtl"] .hero::after { right: auto; left: clamp(1.25rem, 5vw, 5rem); }
-html[dir="rtl"] .portrait-stamp { right: auto; left: -1.7rem; }
 html[dir="rtl"] .scroll-cue { right: clamp(1.25rem, 8vw, 9rem); left: auto; }
 html[dir="rtl"] .language-popover { right: auto; left: 0; }
 html[dir="rtl"] .language-option { text-align: right; }

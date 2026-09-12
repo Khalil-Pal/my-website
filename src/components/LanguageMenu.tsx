@@ -18,7 +18,7 @@ type Props = {
 function LanguageMenu({ copy, language, open, setOpen, onSelect, menuRef }: Props) {
   return (
     <div className="language-menu" ref={menuRef}>
-      <button type="button" className="language-trigger" onClick={() => setOpen((isOpen) => !isOpen)} aria-expanded={open} aria-haspopup="menu" data-testid="button-language-menu">
+      <button type="button" className="language-trigger" onClick={() => setOpen((isOpen) => !isOpen)} aria-expanded={open} aria-haspopup="menu">
         {copy.language.label}
       </button>
       {open && (
@@ -31,7 +31,6 @@ function LanguageMenu({ copy, language, open, setOpen, onSelect, menuRef }: Prop
               onClick={() => onSelect(item.code)}
               role="menuitemradio"
               aria-checked={language === item.code}
-              data-testid={`button-language-${item.code}`}
             >
               {item.label}
             </button>

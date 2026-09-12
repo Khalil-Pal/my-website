@@ -14,7 +14,7 @@ function Skills({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
         <div className="skills-layout">
           <div {...reveal('skills-symbol')} style={reveal('skills-symbol').style} className="skills-symbol" aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
           <div className="skill-groups">
-            {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80)} className={`skill-tier ${tier.id}`} style={reveal(`skill-tier-${tier.id}`).style} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill} data-testid={`skill-${skill.replaceAll(' ', '-').toLowerCase()}`}>{skill}</span>)}</div></div>)}
+            {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80)} className={`skill-tier ${tier.id}`} style={reveal(`skill-tier-${tier.id}`).style} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill}>{skill}</span>)}</div></div>)}
             <p {...reveal('skills-credential', 180)} className="skill-credential" style={reveal('skills-credential').style}>{copy.skills.credential}</p>
           </div>
         </div>

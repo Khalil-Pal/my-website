@@ -19,13 +19,13 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
   return (
     <>
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#top" className="brand" data-testid="link-brand">
+        <a href="#top" className="brand">
           <span className="brand-mark">K</span>
           <span>KH / 24</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
-            <a key={key} href={`#${key}`} className="nav-link" data-testid={`link-nav-${key}`}>{label}</a>
+            <a key={key} href={`#${key}`} className="nav-link">{label}</a>
           ))}
         </nav>
         <div className="header-actions">
@@ -43,7 +43,7 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
             onSelect={onSelectLanguage}
             menuRef={languageMenuRef}
           />
-          <button type="button" className="menu-button" onClick={() => setMenuOpen(!menuOpen)} data-testid="button-mobile-menu" aria-label="Toggle menu">
+          <button type="button" className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             {menuOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
         </div>
@@ -51,7 +51,7 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
       {menuOpen && (
         <nav className="mobile-menu" aria-label="Mobile navigation">
           {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
-            <a key={key} href={`#${key}`} className="nav-link" onClick={() => setMenuOpen(false)} data-testid={`link-mobile-nav-${key}`}>{label}</a>
+            <a key={key} href={`#${key}`} className="nav-link" onClick={() => setMenuOpen(false)}>{label}</a>
           ))}
         </nav>
       )}

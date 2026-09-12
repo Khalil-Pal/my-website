@@ -19,7 +19,7 @@ function About({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
           <div>
             <div className="what-grid">
               {copy.about.what.map((item: any, index: number) => (
-                <article {...reveal(`what-${index}`, index * 80)} className="what-card" style={reveal(`what-${index}`).style} key={item.number} data-testid={`card-what-${index}`}>
+                <article {...reveal(`what-${index}`, index * 80)} className="what-card" style={reveal(`what-${index}`).style} key={item.number}>
                   <span className="what-number">{item.number}</span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -27,7 +27,7 @@ function About({ copy, reveal }: { copy: Copy; reveal: Reveal }) {
               ))}
             </div>
             <div className="stats-row">
-              {copy.about.stats.map((stat: any, index: number) => <div className="stat" key={stat.label} data-testid={`stat-about-${index}`}><span className="stat-value">{stat.value}</span><span className="stat-label">{stat.label}</span></div>)}
+              {copy.about.stats.map((stat: any, index: number) => <div className="stat" key={stat.label}><span className="stat-value">{stat.value}</span><span className="stat-label">{stat.label}</span></div>)}
             </div>
             <div className="languages">
               <h3>{copy.about.languagesTitle}</h3>
