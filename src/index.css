@@ -603,6 +603,7 @@ html[dir="rtl"] .timeline-copy::before { right: -4.35rem; left: auto; }
 }
 @media (max-width: 800px) {
   html[dir="rtl"] .timeline::before { right: 5px; left: auto; }
+  html[dir="rtl"] .timeline-item { padding-left: 0; padding-right: 1.8rem; }
   html[dir="rtl"] .timeline-copy { padding-right: 0; }
   html[dir="rtl"] .timeline-copy::before { right: -1.85rem; left: auto; }
 }
