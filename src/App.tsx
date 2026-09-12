@@ -245,7 +245,7 @@ function App() {
                     <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>
                     <div className="project-footer">
                       <div className="stack">{project.stack.map((item: string) => <span key={item}>{item}</span>)}</div>
-                      {project.link ? <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a> : <span className="replace-note">{/* REPLACE: add the hardest part and Nidaa project link */}{project.replace}</span>}
+                      <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : project.id === 'nidaa' ? <Github size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a>
                     </div>
                   </div>
                   <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} /><span className="art-label">{project.artLabel}</span></div>
