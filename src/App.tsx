@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, MessageCircle, Send, X } from 'lucide-react';
+import { ArrowUpRight, BriefcaseBusiness, Code2, Database, FileText, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, MessageCircle, Send, X } from 'lucide-react';
 import { translations } from './translations.js';
 import profileImage from '@assets/portrait.webp';
 import sandyLogo from '@assets/sandy.webp';
@@ -16,6 +16,8 @@ const socials = {
 };
 const email = 'Khalilayed777@gmail.com';
 const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+// BASE_URL keeps this correct under the GitHub Pages sub-path. Drop the PDF at public/resume.pdf.
+const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 const projectImages = {
   sandy: sandyLogo,
   nidaa: nidaaLogo,
@@ -122,6 +124,7 @@ function App() {
             <a href={socials.linkedin} target="_blank" rel="noreferrer" className="header-link" aria-label="LinkedIn"><Linkedin size={16} /></a>
             <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="header-link" aria-label="Email"><Mail size={16} /></a>
           </div>
+          <a href={resumeUrl} target="_blank" rel="noreferrer" className="header-resume"><FileText size={14} />{copy.contact.resume}</a>
           <div className="language-menu" ref={languageMenuRef}>
             <button type="button" className="language-trigger" onClick={() => setLanguageMenuOpen((isOpen) => !isOpen)} aria-expanded={languageMenuOpen} aria-haspopup="menu" data-testid="button-language-menu">
               {copy.language.label}
@@ -304,6 +307,7 @@ function App() {
             <h2 {...reveal('contact-title')} style={reveal('contact-title').style}>{copy.contact.title}</h2>
             <p {...reveal('contact-copy', 80)} className="contact-sub" style={reveal('contact-copy').style}>{copy.contact.text}</p>
             <div className="contact-links">
+              <a href={resumeUrl} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-resume"><FileText size={16} />{copy.contact.resume}</a>
               <a href={socials.telegram} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-telegram"><Send size={16} />{copy.contact.telegram}</a>
               <a href={socials.github} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-github"><Github size={16} />{copy.contact.github}</a>
               <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-email"><Mail size={16} />{copy.contact.email}</a>

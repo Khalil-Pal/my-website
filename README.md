@@ -2,7 +2,7 @@
  
 My personal portfolio site — showcasing who I am, what I've built, and how to reach me.
  
-**Live site:** [add your deployed URL here]
+**Live site:** https://khalil-pal.github.io/my-website/ *(goes live once Pages is enabled — see Deployment)*
 **Contact:** Khalilayed777@gmail.com
  
 ## About
@@ -25,12 +25,39 @@ I'm an Information Systems & Technologies student at LETI (Saint Petersburg), fo
  
 ```
 src/
- ├─ App.tsx            → page layout & all sections
+ ├─ App.tsx            → page composition
+ ├─ components/        → Header, Hero, Work, About, Skills, Journey, Contact, Footer
  ├─ translations.js    → all EN/AR/RU text content
  ├─ index.css          → styling & design system
- ├─ assets/            → images (portrait, project logos)
+ ├─ assets/            → images (portrait, project logos — WebP)
  └─ main.tsx           → app entry point
+public/
+ ├─ favicon.svg        → brand mark
+ ├─ og-image.jpg       → social preview card
+ └─ resume.pdf         → NOT COMMITTED — see below
 ```
+
+## Deployment
+
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site
+and publishes `dist/` to GitHub Pages.
+
+**One-time setup (you have to do this in the browser — I can't):**
+
+1. Go to **Settings → Pages** in this repo.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main` (or re-run the workflow from the Actions tab).
+
+The site then serves from `https://khalil-pal.github.io/my-website/`. That
+sub-path is why `vite.config.ts` sets `base: '/my-website/'` — if you later
+point a custom domain at this, change `base` to `'/'` and update the
+`og:url`, `og:image` and `canonical` URLs in `index.html`.
+
+## Résumé
+
+The header and Contact section already link to `/resume.pdf`. Drop your PDF
+at `public/resume.pdf` and it will be picked up on the next build — no code
+change needed. Until then those links 404; no placeholder PDF was created.
  ## Featured Projects
  
 - **[Sandy Squirrel Bot](https://t.me/Sandy67_Bot)** — a Telegram bot for downloading media (YouTube, Instagram, Facebook) and converting files between formats, with an async backend, PostgreSQL, and tiered subscriptions.

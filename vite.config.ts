@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  // Served from https://khalil-pal.github.io/my-website/ — change to '/' for a custom domain.
+  base: '/my-website/',
   plugins: [react()],
   resolve: {
     alias: {
