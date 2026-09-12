@@ -1,6 +1,5 @@
-import { FileText, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import LanguageMenu from './LanguageMenu';
-import { emailComposeUrl, resumeUrl, socials } from '../site';
 import type { Copy, Language } from '../site';
 
 type Props = {
@@ -21,7 +20,7 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <a href="#top" className="brand">
           <span className="brand-mark">K</span>
-          <span>KH</span>
+          <span className="brand-name">Khalil Housheya</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
@@ -29,12 +28,6 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
           ))}
         </nav>
         <div className="header-actions">
-          <div className="header-links">
-            <a href={socials.github} target="_blank" rel="noreferrer" className="header-link" aria-label="GitHub"><Github size={16} /></a>
-            <a href={socials.linkedin} target="_blank" rel="noreferrer" className="header-link" aria-label="LinkedIn"><Linkedin size={16} /></a>
-            <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="header-link" aria-label="Email"><Mail size={16} /></a>
-          </div>
-          <a href={resumeUrl} target="_blank" rel="noreferrer" className="header-resume"><FileText size={14} />{copy.contact.resume}</a>
           <LanguageMenu
             copy={copy}
             language={language}
