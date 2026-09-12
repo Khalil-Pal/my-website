@@ -32,9 +32,9 @@ src/
  ├─ assets/            → images (portrait, project logos — WebP)
  └─ main.tsx           → app entry point
 public/
- ├─ favicon.svg        → brand mark
+ ├─ logoprotfolio.png  → favicon / brand mark
  ├─ og-image.jpg       → social preview card
- └─ resume.pdf         → NOT COMMITTED — see below
+ └─ resume.pdf         → linked from the Contact section
 ```
 
 ## Deployment
@@ -55,9 +55,8 @@ point a custom domain at this, change `base` to `'/'` and update the
 
 ## Résumé
 
-The header and Contact section already link to `/resume.pdf`. Drop your PDF
-at `public/resume.pdf` and it will be picked up on the next build — no code
-change needed. Until then those links 404; no placeholder PDF was created.
+The Contact section links to `/resume.pdf`, served from `public/resume.pdf`.
+To update it, replace that file — no code change needed.
  ## Featured Projects
  
 - **[Sandy Squirrel Bot](https://t.me/Sandy67_Bot)** — a Telegram bot for downloading media (YouTube, Instagram, Facebook) and converting files between formats, with an async backend, PostgreSQL, and tiered subscriptions.
