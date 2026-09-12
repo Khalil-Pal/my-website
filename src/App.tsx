@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, BriefcaseBusiness, Code2, Database, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, MessageCircle, Send, X } from 'lucide-react';
 import { translations } from './translations.js';
-import profileImage from '@assets/my_picture_1787425333891.png';
-import sandyLogo from '@assets/sandy-new.png';
-import nidaaLogo from '@assets/nidaa-new.png';
-import emilieLogo from '@assets/emilie-new.png';
+import profileImage from '@assets/portrait.webp';
+import sandyLogo from '@assets/sandy.webp';
+import nidaaLogo from '@assets/nidaa.webp';
+import emilieLogo from '@assets/emilie.webp';
 
 type Language = 'en' | 'ar' | 'ru';
 
@@ -181,7 +181,7 @@ function App() {
             </div>
             <div {...reveal('portrait', 170)} className={`${reveal('portrait').className} portrait-wrap`} style={reveal('portrait').style}>
               <div className="portrait" data-testid="img-khalil">
-                <img src={profileImage} alt="Khalil Housheya" />
+                <img src={profileImage} alt="Khalil Housheya" width={780} height={1170} decoding="async" />
                 <div className="portrait-content">
                 </div>
               </div>
@@ -208,7 +208,7 @@ function App() {
             </div>
             <div className="project-list">
               {copy.work.projects.map((project: any, index: number) => (
-                <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id === 'nidaa' ? 'nidaa' : ''}`} style={reveal(`project-${project.id}`).style} key={project.id} data-testid={`card-project-${project.id}`}>
+                <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id}`} style={reveal(`project-${project.id}`).style} key={project.id} data-testid={`card-project-${project.id}`}>
                   <div className="project-index">{project.index}</div>
                   <div className="project-main">
                     <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>
@@ -217,7 +217,7 @@ function App() {
                       <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : project.id === 'nidaa' ? <Github size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a>
                     </div>
                   </div>
-                  <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} /><span className="art-label">{project.artLabel}</span></div>
+                  <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} width={860} height={645} loading="lazy" decoding="async" /><span className="art-label">{project.artLabel}</span></div>
                 </article>
               ))}
             </div>
