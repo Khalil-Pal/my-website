@@ -240,7 +240,7 @@ a { color: inherit; text-decoration: none; }
 }
 .meta-item { display: inline-flex; align-items: center; gap: .5rem; }
 .meta-item svg { color: var(--gold); }
-.hero-links { display: flex; gap: 1.2rem; margin-top: 2.2rem; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 1.1rem 1.2rem; margin-top: 2.2rem; }
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -492,6 +492,7 @@ section { position: relative; }
 .tech-marquee-sequence span::after { content: '✦'; color: var(--coral); margin-left: 1.8rem; }
 .journey { background: var(--paper); color: var(--ink); }
 .journey .section-title { color: var(--ink); }
+.journey .section-intro { color: #504e5f; }
 .journey .section-kicker { color: var(--coral-dark); }
 .timeline { position: relative; border-top: 1px solid #c6c2b8; }
 .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 30%; width: 1px; background: #c6c2b8; }
