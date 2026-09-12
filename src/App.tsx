@@ -1,34 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, BriefcaseBusiness, Code2, Database, FileText, Github, Instagram, Layers3, Linkedin, Mail, MapPin, Menu, MessageCircle, Send, X } from 'lucide-react';
 import { translations } from './translations.js';
-import profileImage from '@assets/portrait.webp';
-import sandyLogo from '@assets/sandy.webp';
-import nidaaLogo from '@assets/nidaa.webp';
-import emilieLogo from '@assets/emilie.webp';
-
-type Language = 'en' | 'ar' | 'ru';
-
-const socials = {
-  github: 'https://github.com/Khalil-Pal',
-  linkedin: 'https://www.linkedin.com/in/khalil-housheya/',
-  telegram: 'https://t.me/khalil_ayed',
-  reddit: 'https://www.reddit.com/user/KhalilHousheya/',
-};
-const email = 'Khalilayed777@gmail.com';
-const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
-// BASE_URL keeps this correct under the GitHub Pages sub-path. Drop the PDF at public/resume.pdf.
-const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
-const projectImages = {
-  sandy: sandyLogo,
-  nidaa: nidaaLogo,
-  emilie: emilieLogo,
-};
-const techStack = ['Java', 'Python', 'JavaScript', 'HTML', 'CSS', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Git', 'GitHub', 'GitHub Actions', 'Postman'];
-const languageOptions: { code: Language; label: string }[] = [
-  { code: 'en', label: 'English' },
-  { code: 'ar', label: 'العربية' },
-  { code: 'ru', label: 'Русский' },
-];
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Ticker from './components/Ticker';
+import Work from './components/Work';
+import About from './components/About';
+import Skills from './components/Skills';
+import Journey from './components/Journey';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import type { Language } from './site';
 
 function getInitialLanguage(): Language {
   if (typeof window === 'undefined') return 'en';
@@ -108,221 +89,29 @@ function App() {
 
   return (
     <div className="portfolio" ref={revealRoot}>
-      <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#top" className="brand" data-testid="link-brand">
-          <span className="brand-mark">K</span>
-          <span>KH / 24</span>
-        </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
-            <a key={key} href={`#${key}`} className="nav-link" data-testid={`link-nav-${key}`}>{label}</a>
-          ))}
-        </nav>
-        <div className="header-actions">
-          <div className="header-links">
-            <a href={socials.github} target="_blank" rel="noreferrer" className="header-link" aria-label="GitHub"><Github size={16} /></a>
-            <a href={socials.linkedin} target="_blank" rel="noreferrer" className="header-link" aria-label="LinkedIn"><Linkedin size={16} /></a>
-            <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="header-link" aria-label="Email"><Mail size={16} /></a>
-          </div>
-          <a href={resumeUrl} target="_blank" rel="noreferrer" className="header-resume"><FileText size={14} />{copy.contact.resume}</a>
-          <div className="language-menu" ref={languageMenuRef}>
-            <button type="button" className="language-trigger" onClick={() => setLanguageMenuOpen((isOpen) => !isOpen)} aria-expanded={languageMenuOpen} aria-haspopup="menu" data-testid="button-language-menu">
-              {copy.language.label}
-            </button>
-            {languageMenuOpen && (
-              <div className="language-popover" role="menu" aria-label={copy.language.label}>
-                {languageOptions.map((item) => (
-              <button
-                key={item.code}
-                type="button"
-                className={`language-option ${language === item.code ? 'active' : ''}`}
-                onClick={() => switchLanguage(item.code)}
-                role="menuitemradio"
-                aria-checked={language === item.code}
-                data-testid={`button-language-${item.code}`}
-              >
-                {item.label}
-              </button>
-                ))}
-              </div>
-            )}
-          </div>
-          <button type="button" className="menu-button" onClick={() => setMenuOpen(!menuOpen)} data-testid="button-mobile-menu" aria-label="Toggle menu">
-            {menuOpen ? <X size={21} /> : <Menu size={21} />}
-          </button>
-        </div>
-      </header>
-      {menuOpen && (
-        <nav className="mobile-menu" aria-label="Mobile navigation">
-          {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
-            <a key={key} href={`#${key}`} className="nav-link" onClick={() => setMenuOpen(false)} data-testid={`link-mobile-nav-${key}`}>{label}</a>
-          ))}
-        </nav>
-      )}
+      <Header
+        copy={copy}
+        scrolled={scrolled}
+        language={language}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        languageMenuOpen={languageMenuOpen}
+        setLanguageMenuOpen={setLanguageMenuOpen}
+        onSelectLanguage={switchLanguage}
+        languageMenuRef={languageMenuRef}
+      />
 
       <main id="top">
-        <section className="hero">
-          <div className="hero-grid">
-            <div className="hero-copy">
-              <div {...reveal('hero-eyebrow')} className={`${reveal('hero-eyebrow').className} eyebrow`} style={reveal('hero-eyebrow').style}>{copy.hero.eyebrow}</div>
-              <h1 {...reveal('hero-title', 90)} className={`${reveal('hero-title').className}`} style={reveal('hero-title').style}>
-                {copy.hero.first}<br /><span className="accent">{copy.hero.second}</span>
-              </h1>
-              <p {...reveal('hero-role', 150)} className={`${reveal('hero-role').className} hero-subtitle`} style={reveal('hero-role').style}>{copy.hero.role}</p>
-              <p {...reveal('hero-bio', 180)} className={`${reveal('hero-bio').className} hero-bio`} style={reveal('hero-bio').style}>{copy.hero.bio}</p>
-              <div {...reveal('hero-meta', 210)} className={`${reveal('hero-meta').className} hero-meta`} style={reveal('hero-meta').style}>
-                <span className="meta-item" data-testid="text-location"><MapPin size={14} />{copy.hero.location}</span>
-                <span className="meta-item" data-testid="text-status"><BriefcaseBusiness size={14} />{copy.hero.status}</span>
-              </div>
-              <div {...reveal('hero-links', 270)} className={`${reveal('hero-links').className} hero-links`} style={reveal('hero-links').style}>
-                <a href={socials.github} target="_blank" rel="noreferrer" className="text-link" data-testid="link-github-hero"><Github size={15} />GitHub</a>
-                <a href={socials.linkedin} target="_blank" rel="noreferrer" className="text-link" data-testid="link-linkedin-hero"><Linkedin size={15} />LinkedIn</a>
-                <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="text-link" data-testid="link-email-hero"><Mail size={15} />Email</a>
-                <a href={socials.telegram} target="_blank" rel="noreferrer" className="text-link" data-testid="link-telegram-hero"><Send size={15} />Telegram</a>
-                <a href={socials.reddit} target="_blank" rel="noreferrer" className="text-link" data-testid="link-reddit-hero"><MessageCircle size={15} />Reddit</a>
-              </div>
-            </div>
-            <div {...reveal('portrait', 170)} className={`${reveal('portrait').className} portrait-wrap`} style={reveal('portrait').style}>
-              <div className="portrait" data-testid="img-khalil">
-                <img src={profileImage} alt="Khalil Housheya" width={780} height={1170} decoding="async" />
-                <div className="portrait-content">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="scroll-cue"><span />{copy.hero.scroll}</div>
-        </section>
-
-        <div className="ticker" aria-label="Areas of practice">
-          <div className="ticker-track">
-            {[0, 1].map((sequence) => (
-              <div className="ticker-sequence" aria-hidden={sequence === 1} key={sequence}>
-                {copy.ticker.map((item: string, index: number) => <span className="ticker-item" key={`${item}-${index}`}>{item}</span>)}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <section className="section work" id="work">
-          <div className="section-inner">
-            <div className="section-heading">
-              <div className="section-kicker">{copy.work.kicker}</div>
-              <div><h2 {...reveal('work-title')} className="section-title" style={reveal('work-title').style}>{copy.work.title}</h2><p {...reveal('work-intro', 80)} className="section-intro" style={reveal('work-intro').style}>{copy.work.intro}</p></div>
-            </div>
-            <div className="project-list">
-              {copy.work.projects.map((project: any, index: number) => (
-                <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id}`} style={reveal(`project-${project.id}`).style} key={project.id} data-testid={`card-project-${project.id}`}>
-                  <div className="project-index">{project.index}</div>
-                  <div className="project-main">
-                    <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>
-                    <div className="project-footer">
-                      <div className="stack">{project.stack.map((item: string) => <span key={item}>{item}</span>)}</div>
-                      <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : project.id === 'nidaa' ? <Github size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a>
-                    </div>
-                  </div>
-                  <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} width={860} height={645} loading="lazy" decoding="async" /><span className="art-label">{project.artLabel}</span></div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section about" id="about">
-          <div className="section-inner">
-            <div className="section-heading">
-              <div className="section-kicker">{copy.about.kicker}</div>
-              <div>
-                <h2 {...reveal('about-title')} className="section-title" style={reveal('about-title').style}>{copy.about.title}</h2>
-                <p {...reveal('about-intro', 80)} className="section-intro" style={reveal('about-intro').style}>{copy.about.intro}</p>
-              </div>
-            </div>
-            <div className="about-grid">
-              <div>
-                <div {...reveal('about-copy')} className="about-copy" style={reveal('about-copy').style}>{copy.about.paragraph}</div>
-                <p {...reveal('about-small', 80)} className="small-copy" style={reveal('about-small').style}>{copy.about.small}</p>
-              </div>
-              <div>
-                <div className="what-grid">
-                  {copy.about.what.map((item: any, index: number) => (
-                    <article {...reveal(`what-${index}`, index * 80)} className="what-card" style={reveal(`what-${index}`).style} key={item.number} data-testid={`card-what-${index}`}>
-                      <span className="what-number">{item.number}</span>
-                      <h3>{item.title}</h3>
-                      <p>{item.text}</p>
-                    </article>
-                  ))}
-                </div>
-                {/* REPLACE: update these editable portfolio stats */}
-                <div className="stats-row">
-                  {copy.about.stats.map((stat: any, index: number) => <div className="stat" key={stat.label} data-testid={`stat-about-${index}`}><span className="stat-value">{stat.value}</span><span className="stat-label">{stat.label}</span></div>)}
-                </div>
-                <div className="languages">
-                  <h3>{copy.about.languagesTitle}</h3>
-                  {copy.about.languages.map((item: any) => <div className="language-line" key={item.name}><span className="language-name">{item.name}</span><span className="language-level">{item.level}</span></div>)}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section skills" id="skills">
-          <div className="section-inner">
-            <div className="section-heading">
-              <div className="section-kicker">{copy.skills.kicker}</div>
-              <div><h2 {...reveal('skills-title')} className="section-title" style={reveal('skills-title').style}>{copy.skills.title}</h2><p {...reveal('skills-intro', 80)} className="section-intro" style={reveal('skills-intro').style}>{copy.skills.intro}</p></div>
-            </div>
-            <div className="skills-layout">
-              <div {...reveal('skills-symbol')} style={reveal('skills-symbol').style} className="skills-symbol" aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
-              <div className="skill-groups">
-                {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80)} className={`skill-tier ${tier.id}`} style={reveal(`skill-tier-${tier.id}`).style} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill} data-testid={`skill-${skill.replaceAll(' ', '-').toLowerCase()}`}>{skill}</span>)}</div></div>)}
-                <p {...reveal('skills-credential', 180)} className="skill-credential" style={reveal('skills-credential').style}>{copy.skills.credential}</p>
-              </div>
-            </div>
-            <div className="tech-marquee" aria-label="Technology stack">
-              <div className="tech-marquee-track">
-                {[0, 1, 2, 3].map((sequence) => (
-                  <div className="tech-marquee-sequence" aria-hidden={sequence !== 0} key={sequence}>
-                    {techStack.map((item) => <span key={item}>{item}</span>)}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section journey" id="journey">
-          <div className="section-inner">
-            <div className="section-heading">
-              <div className="section-kicker">{copy.journey.kicker}</div>
-              <div><h2 {...reveal('journey-title')} className="section-title" style={reveal('journey-title').style}>{copy.journey.title}</h2><p {...reveal('journey-intro', 80)} className="section-intro" style={reveal('journey-intro').style}>{copy.journey.intro}</p></div>
-            </div>
-            <div className="timeline">
-              {copy.journey.items.map((item: any, index: number) => <article {...reveal(`journey-${index}`, index * 80)} className="timeline-item" style={reveal(`journey-${index}`).style} key={item.title} data-testid={`timeline-${index}`}><div className="timeline-date">{item.date}</div><div className="timeline-copy"><h3>{item.title}</h3><p>{item.text}</p></div></article>)}
-            </div>
-          </div>
-        </section>
-
-        <section className="section contact" id="contact">
-          <div className="section-inner">
-            <div className="section-kicker">{copy.contact.kicker}</div>
-            <h2 {...reveal('contact-title')} style={reveal('contact-title').style}>{copy.contact.title}</h2>
-            <p {...reveal('contact-copy', 80)} className="contact-sub" style={reveal('contact-copy').style}>{copy.contact.text}</p>
-            <div className="contact-links">
-              <a href={resumeUrl} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-resume"><FileText size={16} />{copy.contact.resume}</a>
-              <a href={socials.telegram} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-telegram"><Send size={16} />{copy.contact.telegram}</a>
-              <a href={socials.github} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-github"><Github size={16} />{copy.contact.github}</a>
-              <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-email"><Mail size={16} />{copy.contact.email}</a>
-              <a href={socials.linkedin} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-linkedin"><Linkedin size={16} />LinkedIn</a>
-              <a href={socials.reddit} target="_blank" rel="noreferrer" className="contact-button" data-testid="link-contact-reddit"><MessageCircle size={16} />Reddit</a>
-            </div>
-          </div>
-        </section>
+        <Hero copy={copy} reveal={reveal} />
+        <Ticker copy={copy} />
+        <Work copy={copy} reveal={reveal} />
+        <About copy={copy} reveal={reveal} />
+        <Skills copy={copy} reveal={reveal} />
+        <Journey copy={copy} reveal={reveal} />
+        <Contact copy={copy} reveal={reveal} />
       </main>
 
-      <footer className="site-footer">
-        <span>{copy.footer.note}</span>
-        <span className="footer-note">{copy.footer.made}</span>
-        <a href="#top" data-testid="link-back-to-top">{copy.footer.top} <ArrowUpRight size={13} /></a>
-      </footer>
+      <Footer copy={copy} />
     </div>
   );
 }
