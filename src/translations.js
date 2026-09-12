@@ -2,7 +2,7 @@ export const translations = {
   en: {
     languageName: 'English',
     language: { label: 'Language' },
-    nav: { about: 'About', work: 'Work', skills: 'Skills', journey: 'Journey', contact: 'Contact' },
+    nav: { work: 'Work', about: 'About', skills: 'Skills', journey: 'Journey', contact: 'Contact' },
     hero: {
       eyebrow: 'Information systems / backend developer',
       first: 'Khalil',
@@ -16,7 +16,7 @@ export const translations = {
     },
     ticker: ['backend systems', 'information architecture', 'Telegram bots', 'clean APIs', 'always learning'],
     about: {
-      kicker: '01 / a little context',
+      kicker: '02 / a little context',
       title: 'More than a backend.',
       intro: 'I care about the surface too: the names, flows and tiny decisions that make a system feel obvious.',
       paragraph: "I'm Khalil — a developer who likes useful complexity. My work sits between product thinking and engineering: understanding what people need, then making the dependable layer underneath it feel simple.",
@@ -39,7 +39,7 @@ export const translations = {
       ],
     },
     work: {
-      kicker: '02 / selected work',
+      kicker: '01 / selected work',
       title: 'Things with a pulse.',
       intro: 'Three projects that taught me something I could not learn from a tutorial.',
       projects: [
@@ -52,11 +52,10 @@ export const translations = {
       kicker: '03 / toolkit',
       title: 'The working set.',
       intro: 'Tools are only useful when they help an idea become more precise.',
-      groups: [
-        { title: 'Languages', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] },
-        { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'Data modeling', 'Authentication'] },
-        { title: 'Tools & ways', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] },
-        { title: 'Design', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] },
+      tiers: [
+        { id: 'core', title: 'Core', skills: ['Java', 'Spring Boot', 'PostgreSQL', 'REST APIs', 'Python'] },
+        { id: 'working', title: 'Working knowledge', skills: ['JavaScript', 'SQL', 'HTML / CSS', 'Git', 'GitHub', 'GitHub Actions', 'Postman'] },
+        { id: 'also', title: 'Also comfortable with', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] },
       ],
       credential: 'Certified Front-End Developer — Yandex Education (2025–2026)',
     },
@@ -84,7 +83,7 @@ export const translations = {
   ar: {
     languageName: 'العربية',
     language: { label: 'اللغة' },
-    nav: { about: 'عنّي', work: 'أعمالي', skills: 'مهاراتي', journey: 'رحلتي', contact: 'تواصل' },
+    nav: { work: 'أعمالي', about: 'عنّي', skills: 'مهاراتي', journey: 'رحلتي', contact: 'تواصل' },
     hero: {
       eyebrow: 'نظم المعلومات / مطوّر خلفيات',
       first: 'خليل',
@@ -98,7 +97,7 @@ export const translations = {
     },
     ticker: ['أنظمة خلفية', 'هندسة المعلومات', 'بوتات تيليغرام', 'واجهات API', 'تعلّم مستمر'],
     about: {
-      kicker: '01 / بعض السياق',
+      kicker: '02 / بعض السياق',
       title: 'أكثر من مطوّر خلفيات.',
       intro: 'أهتم بالواجهة أيضاً: الأسماء والتدفقات والقرارات الصغيرة التي تجعل النظام واضحاً.',
       paragraph: 'أنا خليل — مطوّر يحب الصعوبات المفيدة. يقع عملي بين التفكير بالمنتج والهندسة: أفهم ما يحتاجه الناس، ثم أبني الطبقة الموثوقة تحته ببساطة.',
@@ -113,7 +112,7 @@ export const translations = {
       languages: [{ name: 'العربية', level: 'لغة أم' }, { name: 'الإنجليزية', level: 'بطلاقة' }, { name: 'الروسية', level: 'احترافي' }],
     },
     work: {
-      kicker: '02 / أعمال مختارة', title: 'أشياء تنبض بالحياة.', intro: 'مشاريع علمتني شيئاً لا يمكن تعلمه من درس تعليمي.',
+      kicker: '01 / أعمال مختارة', title: 'أشياء تنبض بالحياة.', intro: 'مشاريع علمتني شيئاً لا يمكن تعلمه من درس تعليمي.',
       projects: [
         { id: 'sandy', index: 'A / 01', tag: 'يعمل الآن · بوت تيليغرام · مايو–يونيو 2026', title: 'Sandy Squirrel Bot', description: 'بوت تيليغرام يحمّل الوسائط من يوتيوب وإنستغرام وفيسبوك، ويحوّل الملفات (DOCX وPDF وPPTX والصور والصوت والفيديو) داخل المحادثة نفسها دون مغادرتها.', artLabel: 'SANDY', stack: ['Python', 'aiogram', 'PostgreSQL', 'FFmpeg', 'LibreOffice', 'Pandoc', 'GitHub Actions'], linkLabel: 'جرّبه الآن', link: 'https://t.me/Sandy67_Bot' },
         { id: 'nidaa', index: 'B / 02', tag: 'منصة إنسانية متكاملة · قيد التطوير', title: 'Nidaa', description: 'منصة لتنسيق المساعدات الإنسانية تربط المحتاجين بالمتطوعين والمنظمات والأخصائيين النفسيين. تحتها Spring Boot وPostgreSQL: خمسة أدوار لكلّ منها مساره، واحتساب أولوية مرجّح (درجة الإلحاح، الفئات الهشّة، عدد الأفراد، مدة الانتظار)، ومطابقة لأقرب مستجيب بمسافة هافرساين، وكشف للحالات الحرجة من الكلمات المفتاحية يرفع الطلبات النفسية إلى رأس القائمة.', hardPart: 'جعل الإسناد آمناً ضد تسابق العمليات دون قفل الجدول. يُحجز المتطوع بتحديث شرطي مقيّد بـ is_available = true، ثم يُحجز الطلب بتحديث ثانٍ مقيّد بـ status = PENDING. وإذا لم يعدّل التحديث الثاني أي صف، فمعناه أن طلباً آخر سبق إليه، فيعود المتطوع متاحاً كما كان. لا يمكن أبداً أن يحصل طلبان متزامنان على المستجيب نفسه.', artLabel: 'نداء', stack: ['Java 17', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'JWT', 'REST APIs'], linkLabel: 'اطّلع على الكود', link: 'https://github.com/Khalil-Pal/Nidaa-project' },
@@ -122,7 +121,7 @@ export const translations = {
     },
     skills: {
       kicker: '03 / صندوق الأدوات', title: 'أدوات العمل.', intro: 'الأدوات مهمة فقط عندما تساعد الفكرة على أن تصبح أدق.',
-      groups: [{ title: 'اللغات', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'الخلفيات', skills: ['Java', 'Spring Boot', 'REST APIs', 'Telegram Bots', 'نمذجة البيانات', 'المصادقة'] }, { title: 'الأدوات والطريقة', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'التصميم', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
+      tiers: [{ id: 'core', title: 'الأساس', skills: ['Java', 'Spring Boot', 'PostgreSQL', 'REST APIs', 'Python'] }, { id: 'working', title: 'معرفة عملية', skills: ['JavaScript', 'SQL', 'HTML / CSS', 'Git', 'GitHub', 'GitHub Actions', 'Postman'] }, { id: 'also', title: 'وأتعامل معها أيضاً', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
       credential: 'مطوّر واجهات أمامية معتمد — ياندكس للتعليم (2025–2026)',
     },
     journey: {
@@ -135,7 +134,7 @@ export const translations = {
   ru: {
     languageName: 'Русский',
     language: { label: 'Язык' },
-    nav: { about: 'Обо мне', work: 'Работы', skills: 'Навыки', journey: 'Путь', contact: 'Контакты' },
+    nav: { work: 'Работы', about: 'Обо мне', skills: 'Навыки', journey: 'Путь', contact: 'Контакты' },
     hero: {
       eyebrow: 'Информационные системы / backend-разработчик', first: 'Халиль', second: 'Хошиех',
       role: 'Создаю тихую механику, на которой держатся полезные вещи.',
@@ -144,7 +143,7 @@ export const translations = {
     },
     ticker: ['backend-системы', 'архитектура данных', 'Telegram-боты', 'чистые API', 'учусь постоянно'],
     about: {
-      kicker: '01 / немного контекста', title: 'Больше, чем backend.', intro: 'Мне важен и интерфейс: названия, сценарии и маленькие решения, которые делают систему понятной.',
+      kicker: '02 / немного контекста', title: 'Больше, чем backend.', intro: 'Мне важен и интерфейс: названия, сценарии и маленькие решения, которые делают систему понятной.',
       paragraph: 'Я Халиль — разработчик, которому нравится полезная сложность. Моя работа находится между продуктовым мышлением и инженерией: понять потребность и построить под ней надёжный слой.',
       small: 'Сейчас изучаю информационные системы и технологии в LETI. Когда я не в терминале, то разбираю процесс, учу новую русскую фразу или ищу более точный вопрос.',
       what: [{ number: '01', title: 'Надёжность', text: 'API и сервисы, которые остаются понятными с ростом проекта.' }, { number: '02', title: 'Форма идеи', text: 'Модели данных, архитектура и сценарии с запасом для роста.' }, { number: '03', title: 'Учиться дальше', text: 'Любопытство на практике: документировать, тестировать, выпускать.' }],
@@ -152,12 +151,12 @@ export const translations = {
       languagesTitle: 'Языки', languages: [{ name: 'Арабский', level: 'Родной' }, { name: 'Английский', level: 'Свободно' }, { name: 'Русский', level: 'Профессиональный' }],
     },
     work: {
-      kicker: '02 / избранное', title: 'Проекты с характером.', intro: 'Три проекта, которые научили меня тому, чему не научит туториал.',
+      kicker: '01 / избранное', title: 'Проекты с характером.', intro: 'Три проекта, которые научили меня тому, чему не научит туториал.',
       projects: [{ id: 'sandy', index: 'A / 01', tag: 'Работает · Telegram-бот · май–июнь 2026', title: 'Sandy Squirrel Bot', description: 'Telegram-бот, который скачивает медиа с YouTube, Instagram и Facebook и конвертирует файлы (DOCX, PDF, PPTX, изображения, аудио и видео) прямо в переписке, не выходя из чата.', artLabel: 'SANDY', stack: ['Python', 'aiogram', 'PostgreSQL', 'FFmpeg', 'LibreOffice', 'Pandoc', 'GitHub Actions'], linkLabel: 'Попробовать в Telegram', link: 'https://t.me/Sandy67_Bot' }, { id: 'nidaa', index: 'B / 02', tag: 'Full-stack гуманитарная платформа · в работе', title: 'Nidaa', description: 'Платформа координации гуманитарной помощи: связывает нуждающихся с волонтёрами, организациями и психологами. Внутри — Spring Boot и PostgreSQL: пять ролей со своими сценариями, взвешенный расчёт приоритета (срочность, уязвимость, число людей, время ожидания), подбор ближайшего исполнителя по формуле гаверсинуса и определение кризисных обращений по ключевым словам, которое поднимает психологические запросы в начало очереди.', hardPart: 'Сделать назначение устойчивым к гонкам, не блокируя таблицу. Волонтёр захватывается условным UPDATE с проверкой is_available = true, заявка — вторым, с проверкой status = PENDING. Если второй запрос обновил ноль строк, значит гонку выиграл кто-то другой, и волонтёр возвращается в доступные. Две одновременные заявки не могут получить одного и того же человека.', artLabel: 'نداء', stack: ['Java 17', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'JWT', 'REST APIs'], linkLabel: 'Посмотреть код', link: 'https://github.com/Khalil-Pal/Nidaa-project' }, { id: 'emilie', index: 'C / 03', tag: 'Креативная дизайн-студия', title: 'Émilie Atelier', description: 'Приглашения · брендинг · соцсети · UI/UX-дизайн — для особенных моментов и брендов.', artLabel: 'ÉMILIE', stack: ['Branding', 'Social Media', 'UI/UX Design'], linkLabel: 'Смотреть в Instagram', link: 'https://www.instagram.com/emilie.art4?igsi=MTlvdXpmdnd1eHYwdQ%3D%3D' }],
     },
     skills: {
       kicker: '03 / инструменты', title: 'Рабочий набор.', intro: 'Инструменты полезны, когда помогают идее стать точнее.',
-      groups: [{ title: 'Языки', skills: ['Python', 'JavaScript', 'SQL', 'HTML / CSS'] }, { title: 'Backend', skills: ['Java', 'Spring Boot', 'REST API', 'Telegram-боты', 'Модели данных', 'Аутентификация'] }, { title: 'Инструменты', skills: ['Git', 'GitHub', 'GitHub Actions', 'Postman', 'PostgreSQL'] }, { title: 'Дизайн', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
+      tiers: [{ id: 'core', title: 'Основа', skills: ['Java', 'Spring Boot', 'PostgreSQL', 'REST API', 'Python'] }, { id: 'working', title: 'Уверенно использую', skills: ['JavaScript', 'SQL', 'HTML / CSS', 'Git', 'GitHub', 'GitHub Actions', 'Postman'] }, { id: 'also', title: 'Также работаю с', skills: ['Figma', 'Canva', 'Adobe Illustrator', 'Adobe Premiere'] }],
       credential: 'Сертифицированный Frontend-разработчик — Яндекс Образование (2025–2026)',
     },
     journey: {

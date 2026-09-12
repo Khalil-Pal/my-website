@@ -117,6 +117,11 @@ function App() {
           ))}
         </nav>
         <div className="header-actions">
+          <div className="header-links">
+            <a href={socials.github} target="_blank" rel="noreferrer" className="header-link" aria-label="GitHub"><Github size={16} /></a>
+            <a href={socials.linkedin} target="_blank" rel="noreferrer" className="header-link" aria-label="LinkedIn"><Linkedin size={16} /></a>
+            <a href={emailComposeUrl} target="_blank" rel="noreferrer" className="header-link" aria-label="Email"><Mail size={16} /></a>
+          </div>
           <div className="language-menu" ref={languageMenuRef}>
             <button type="button" className="language-trigger" onClick={() => setLanguageMenuOpen((isOpen) => !isOpen)} aria-expanded={languageMenuOpen} aria-haspopup="menu" data-testid="button-language-menu">
               {copy.language.label}
@@ -161,6 +166,7 @@ function App() {
                 {copy.hero.first}<br /><span className="accent">{copy.hero.second}</span>
               </h1>
               <p {...reveal('hero-role', 150)} className={`${reveal('hero-role').className} hero-subtitle`} style={reveal('hero-role').style}>{copy.hero.role}</p>
+              <p {...reveal('hero-bio', 180)} className={`${reveal('hero-bio').className} hero-bio`} style={reveal('hero-bio').style}>{copy.hero.bio}</p>
               <div {...reveal('hero-meta', 210)} className={`${reveal('hero-meta').className} hero-meta`} style={reveal('hero-meta').style}>
                 <span className="meta-item" data-testid="text-location"><MapPin size={14} />{copy.hero.location}</span>
                 <span className="meta-item" data-testid="text-status"><BriefcaseBusiness size={14} />{copy.hero.status}</span>
@@ -193,6 +199,30 @@ function App() {
             ))}
           </div>
         </div>
+
+        <section className="section work" id="work">
+          <div className="section-inner">
+            <div className="section-heading">
+              <div className="section-kicker">{copy.work.kicker}</div>
+              <div><h2 {...reveal('work-title')} className="section-title" style={reveal('work-title').style}>{copy.work.title}</h2><p {...reveal('work-intro', 80)} className="section-intro" style={reveal('work-intro').style}>{copy.work.intro}</p></div>
+            </div>
+            <div className="project-list">
+              {copy.work.projects.map((project: any, index: number) => (
+                <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id === 'nidaa' ? 'nidaa' : ''}`} style={reveal(`project-${project.id}`).style} key={project.id} data-testid={`card-project-${project.id}`}>
+                  <div className="project-index">{project.index}</div>
+                  <div className="project-main">
+                    <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>
+                    <div className="project-footer">
+                      <div className="stack">{project.stack.map((item: string) => <span key={item}>{item}</span>)}</div>
+                      <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : project.id === 'nidaa' ? <Github size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a>
+                    </div>
+                  </div>
+                  <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} /><span className="art-label">{project.artLabel}</span></div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section about" id="about">
           <div className="section-inner">
@@ -231,30 +261,6 @@ function App() {
           </div>
         </section>
 
-        <section className="section work" id="work">
-          <div className="section-inner">
-            <div className="section-heading">
-              <div className="section-kicker">{copy.work.kicker}</div>
-              <div><h2 {...reveal('work-title')} className="section-title" style={reveal('work-title').style}>{copy.work.title}</h2><p {...reveal('work-intro', 80)} className="section-intro" style={reveal('work-intro').style}>{copy.work.intro}</p></div>
-            </div>
-            <div className="project-list">
-              {copy.work.projects.map((project: any, index: number) => (
-                <article {...reveal(`project-${project.id}`, index * 100)} className={`project ${project.id === 'nidaa' ? 'nidaa' : ''}`} style={reveal(`project-${project.id}`).style} key={project.id} data-testid={`card-project-${project.id}`}>
-                  <div className="project-index">{project.index}</div>
-                  <div className="project-main">
-                    <div><div className="project-tag">{project.tag}</div><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.hardPart && <p className="project-hard-part"><strong>The hard part:</strong> {project.hardPart}</p>}</div>
-                    <div className="project-footer">
-                      <div className="stack">{project.stack.map((item: string) => <span key={item}>{item}</span>)}</div>
-                      <a href={project.link} target="_blank" rel="noreferrer" className="project-link" data-testid={`link-project-${project.id}`}>{project.id === 'emilie' ? <Instagram size={15} /> : project.id === 'nidaa' ? <Github size={15} /> : <ArrowUpRight size={15} />}{project.linkLabel}</a>
-                    </div>
-                  </div>
-                  <div className={`project-art ${project.id === 'nidaa' ? 'nidaa' : project.id === 'emilie' ? 'emilie' : 'bot'}`} aria-label={`${project.title} visual`}><img src={projectImages[project.id as keyof typeof projectImages]} alt={`${project.title} logo`} /><span className="art-label">{project.artLabel}</span></div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section skills" id="skills">
           <div className="section-inner">
             <div className="section-heading">
@@ -264,7 +270,7 @@ function App() {
             <div className="skills-layout">
               <div {...reveal('skills-symbol')} style={reveal('skills-symbol').style} className="skills-symbol" aria-hidden="true"><Code2 size={78} strokeWidth={1} color="var(--coral)" /><Database size={52} strokeWidth={1} color="var(--mint)" /><Layers3 size={60} strokeWidth={1} color="var(--gold)" /></div>
               <div className="skill-groups">
-                {copy.skills.groups.map((group: any, index: number) => <div {...reveal(`skill-group-${index}`, index * 80)} className="skill-group" style={reveal(`skill-group-${index}`).style} key={group.title}><h3>{group.title}</h3><div className="skill-chips">{group.skills.map((skill: string) => <span className="skill-chip" key={skill} data-testid={`skill-${skill.replaceAll(' ', '-').toLowerCase()}`}>{skill}</span>)}</div></div>)}
+                {copy.skills.tiers.map((tier: any, index: number) => <div {...reveal(`skill-tier-${tier.id}`, index * 80)} className={`skill-tier ${tier.id}`} style={reveal(`skill-tier-${tier.id}`).style} key={tier.id}><h3>{tier.title}</h3><div className="skill-chips">{tier.skills.map((skill: string) => <span className="skill-chip" key={skill} data-testid={`skill-${skill.replaceAll(' ', '-').toLowerCase()}`}>{skill}</span>)}</div></div>)}
                 <p {...reveal('skills-credential', 180)} className="skill-credential" style={reveal('skills-credential').style}>{copy.skills.credential}</p>
               </div>
             </div>
