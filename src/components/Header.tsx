@@ -21,7 +21,7 @@ function Header({ copy, scrolled, language, menuOpen, setMenuOpen, languageMenuO
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <a href="#top" className="brand">
           <span className="brand-mark">K</span>
-          <span>KH / 24</span>
+          <span>KH</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {(Object.entries(copy.nav) as [string, string][]).map(([key, label]) => (
